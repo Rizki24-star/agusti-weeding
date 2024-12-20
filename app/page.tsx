@@ -146,26 +146,62 @@ export default function Home() {
             >
               Klik Disini
             </button>
-             <div className={`${roboto.className} text-center mt-[39px]`}>
-            <h1 className={`text-navy font-bold text-[24px]`}>BCA</h1>
-            <p className="font-bold text-gold">5485126381</p>
-            <p className="text-gold">Betaria Sitorus</p>
-          </div>
-          <div className={`${roboto.className} text-center mt-[47px]`}>
-            <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
-            <p className="font-bold text-gold">
-              Penerima:
-              <br /> Agusti Naibaho (085297598063)
-            </p>
-            <p className="text-gold">
-              Jln. Gelong Baru Tengah no.23 Tomang, Grogol Petamburan. Jakarta
-              Barat 11440
-            </p>
-          </div>
+            <div className={`${roboto.className} text-center mt-[39px]`}>
+              <h1 className={`text-navy font-bold text-[24px]`}>BCA</h1>
+              <p className="font-bold text-gold">5485126381</p>
+              <p className="text-gold">Betaria Sitorus</p>
+            </div>
+            <div className={`${roboto.className} text-center mt-[47px]`}>
+              <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
+              <p className="font-bold text-gold">
+                Penerima:
+                <br /> Agusti Naibaho (085297598063)
+              </p>
+              <p className="text-gold">
+                Jln. Gelong Baru Tengah no.23 Tomang, Grogol Petamburan. Jakarta
+                Barat 11440
+              </p>
+            </div>
             <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />
           </div>
         </div>
-        <TitleSection  title="Galery Photos"/>
+        <TitleSection title="Galery Photos" />
+      </div>
+      {/* rsv & wishes  */}
+      <div className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
+        <TitleSection title="RSV & Wishes" />
+        <div className="w-full h-[674px] bg-[url('../public/assets/bg_rsv.png')] px-[21px] py-[70px]">
+          <div className="flex flex-col items-center justify-center w-[390px] h-[548px] px-10 bg-[url('../public/assets/bg_rsv_form.png')]">
+            <h2
+              className={`${playfairDisplay.className} text-gold font-bold text-[24px]`}
+            >
+              Are you attended?
+            </h2>
+            <form action="" className="flex flex-col items-center gap-12 mt-[29px] w-full">
+              <div className="border-2 border-gold h-[45px] w-full p-3 rounded-[10px]">
+                <input
+                  type="text"
+                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0`}
+                  placeholder="Name"
+                />
+              </div>
+              <div className="border-2 border-gold h-[45px] w-full p-3 rounded-[10px]">
+                <input
+                  type="text"
+                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0`}
+                  placeholder="Name"
+                />
+              </div>
+              <div className="w-full">
+                <textarea
+                  name=""
+                  id=""
+                  className={`${playfairDisplay.className}  text-gold border-2 border-gold  w-full p-3 rounded-[10px] focus:outline-none`}
+                ></textarea>
+              </div>
+            </form>
+          </div>
+        </div>
       </div>
     </>
   );
