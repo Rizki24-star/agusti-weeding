@@ -3,7 +3,10 @@ import Image from "next/image";
 import { playfairDisplay, roboto, playUsTrad } from "./font";
 import TitleSection from "@/components/TitleSection";
 import BrideCard from "@/components/BrideCard";
-import { bride1, bride2 } from "@/constants/data";
+import { bride1, bride2, event1, event2 } from "@/constants/data";
+import bgFlower from "@/public/assets/bg_flower.png"
+import cardBow from "@/public/assets/card_bow.png"
+import EventCard from "@/components/EventCard";
 // import "";
 
 export default function Home() {
@@ -79,6 +82,90 @@ export default function Home() {
           </div>
         </div>
         <BrideCard {...bride2} />
+      </div>
+      {/* weeding event  */}
+      <div className="h-[124px]">
+        <TitleSection title="Weeding Event" />
+        {/* <EventCard {...event1} /> */}
+        <div className="h-[21px]"></div>
+        {/* <EventCard {...event2} /> */}
+      </div>
+      {/* gift and hours  */}
+      <div>
+        <Image src={bgFlower} alt="flower" />
+        {/* countdown timer  */}
+        <div className="flex items-center justify-between mx-[30px]">
+          <div className="text-gold font-bold text-center">
+            <h1 className="text-[32px]">03</h1>
+            <p className="text-[16px]">Days</p>
+          </div>
+          <div className="text-gold font-bold text-center">
+            <h1 className="text-[32px]">15</h1>
+            <p className="text-[16px]">Hours</p>
+          </div>
+          <div className="text-gold font-bold text-center">
+            <h1 className="text-[32px]">23 </h1>
+            <p className="text-[16px]">Minutes</p>
+          </div>
+          <div className="text-gold font-bold text-center">
+            <h1 className="text-[32px]">55</h1>
+            <p className="text-[16px]">Second</p>
+          </div>
+        </div>
+        <div className="text-center mt-[34px]">
+          <i className={`${playfairDisplay.className} text-[14px] text-gold`}>
+            TUHAN Allah berfirman: "Tidak baik, kalau
+            <br />
+            manusia itu seorang diri saja. Aku akan
+            <br />
+            menjadikan penolong baginya, yang sepadan dengan dia."
+          </i>
+          <p
+            className={`${playfairDisplay.className} font-bold text-gold mt-[20px]`}
+          >
+            Kejadian 2:8
+          </p>
+        </div>
+        {/* weeding gift card  */}
+        <div className="px-[18px] mb-[88px]">
+          {/* weeding gift  */}
+          <div className="text-center mt-[68px] shadow-lg py-[28px] rounded-[10px]">
+            <h3 className={`${playUsTrad.className} text-gold text-[20px]`}>
+              Weeding Gift
+            </h3>
+            <p
+              className={`${playUsTrad.className} text-gold text-[12px] mt-[22px]`}
+            >
+              Doa restu anda merupakan karunia yang sangat
+              <br /> berarti bagi kami. Jika memberi adalah ungkapan
+              <br /> tanda kasih, anda dapat memberi kado ke alamat berikut
+              <br /> atau pun secara cashless.
+            </p>
+            <button
+              className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px]`}
+            >
+              Klik Disini
+            </button>
+             <div className={`${roboto.className} text-center mt-[39px]`}>
+            <h1 className={`text-navy font-bold text-[24px]`}>BCA</h1>
+            <p className="font-bold text-gold">5485126381</p>
+            <p className="text-gold">Betaria Sitorus</p>
+          </div>
+          <div className={`${roboto.className} text-center mt-[47px]`}>
+            <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
+            <p className="font-bold text-gold">
+              Penerima:
+              <br /> Agusti Naibaho (085297598063)
+            </p>
+            <p className="text-gold">
+              Jln. Gelong Baru Tengah no.23 Tomang, Grogol Petamburan. Jakarta
+              Barat 11440
+            </p>
+          </div>
+            <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />
+          </div>
+        </div>
+        <TitleSection  title="Galery Photos"/>
       </div>
     </>
   );
