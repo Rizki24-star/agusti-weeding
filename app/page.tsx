@@ -55,6 +55,7 @@ export default function Home() {
       {/* love story section  */}
       <section className="">
         <TitleSection title="Our Love Story" />
+        <div className="h-[34px]" />
         <BrideCard {...bride1} />
         <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20 my-20">
           <div className="flex flex-col gap-y-6">
@@ -171,7 +172,7 @@ export default function Home() {
       {/* rsv & wishes  */}
       <section className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
         <TitleSection title="RSV & Wishes" />
-        <div className="w-full h-[674px] bg-[url('../public/assets/bg_rsv.png')] px-[21px] py-[70px] mt-[34px]">
+        <div className="w-full h-[674px] bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center w-[390px] h-[548px] px-10 bg-[url('../public/assets/bg_rsv_form.png')]">
             <h2
               className={`${playfairDisplay.className} text-gold font-bold text-[24px]`}
