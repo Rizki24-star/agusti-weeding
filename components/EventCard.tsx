@@ -19,17 +19,23 @@ const EventCard = ({
   address,
   mapLink,
 }: EventCardProps) => {
+  console.log("ng" +background);
+  
   return (
     <div
-      className={`py-[38px] px-[30px] bg-[url('/assets/${background}')] bg-cover bg-opacity-50`}
+      style={{ backgroundImage: `url(${background})` }}
+      className={`relative py-[38px] px-[30px] bg-cover bg-opacity-50 `}
     >
-      <div className="flex flex-col items-center justify-center text-center bg-white p-6">
+      <div className="absolute inset-0 bg-white bg-opacity-50" />
+
+      <div className="flex flex-col relative items-center justify-center text-center bg-white p-6 z-10">
         <h2 className={`${playUsTrad.className} text-[24px] text-gold`}>
           {title}
         </h2>
-        <h4 className={`${roboto.className} text-[20px] font-bold mt-[19px]`}>
-          {date}
-        </h4>
+        <h4
+          className={`${roboto.className} text-[20px] font-bold mt-[19px]`}
+          dangerouslySetInnerHTML={{ __html: date }}
+        />
         <p className={`${roboto.className} pt-[26px]`}>Location</p>
         <p className={`${roboto.className} font-bold mt-[11px]`}>{location}</p>
         <p>{address}</p>

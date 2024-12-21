@@ -13,7 +13,7 @@ export default function Home() {
   return (
     <>
       {/* Opening Section */}
-      <div className="relative h-screen bg-[url('../public/assets/img_opening.png')] bg-cover bg-center">
+      <section className="relative h-screen bg-[url('../public/assets/img_opening.png')] bg-cover bg-center">
         <style jsx>{`
           .gradient-linear {
             background: linear-gradient(
@@ -41,7 +41,7 @@ export default function Home() {
             </p>
           </div>
         </div>
-      </div>
+      </section>
       <div className="relative mx-auto bg-lightBrown">
         <div className="absolute w-[120px] h-[120px] bg-white rounded-full left-0 right-0 mx-auto top-[-72px] flex items-center justify-center shadow-md">
           <Image
@@ -53,7 +53,7 @@ export default function Home() {
         </div>
       </div>
       {/* love story section  */}
-      <div className="">
+      <section className="">
         <TitleSection title="Our Love Story" />
         <BrideCard {...bride1} />
         <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20 my-20">
@@ -82,16 +82,17 @@ export default function Home() {
           </div>
         </div>
         <BrideCard {...bride2} />
-      </div>
+      </section>
       {/* weeding event  */}
-      <div className="h-[124px]">
+      <section>
         <TitleSection title="Weeding Event" />
-        {/* <EventCard {...event1} /> */}
-        <div className="h-[21px]"></div>
-        {/* <EventCard {...event2} /> */}
-      </div>
+        <div className="h-[34px]" />
+        <EventCard {...event1} />
+        <div className="h-[21px]" />
+        <EventCard {...event2} />
+      </section>
       {/* gift and hours  */}
-      <div>
+      <section>
         <Image src={bgFlower} alt="flower" />
         {/* countdown timer  */}
         <div className="flex items-center justify-between mx-[30px]">
@@ -114,11 +115,11 @@ export default function Home() {
         </div>
         <div className="text-center mt-[34px]">
           <i className={`${playfairDisplay.className} text-[14px] text-gold`}>
-            TUHAN Allah berfirman: "Tidak baik, kalau
+            TUHAN Allah berfirman: {'"Tidak baik, kalau'}
             <br />
             manusia itu seorang diri saja. Aku akan
             <br />
-            menjadikan penolong baginya, yang sepadan dengan dia."
+            {'menjadikan penolong baginya, yang sepadan dengan dia".'}
           </i>
           <p
             className={`${playfairDisplay.className} font-bold text-gold mt-[20px]`}
@@ -166,43 +167,46 @@ export default function Home() {
           </div>
         </div>
         <TitleSection title="Galery Photos" />
-      </div>
+      </section>
       {/* rsv & wishes  */}
-      <div className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
+      <section className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
         <TitleSection title="RSV & Wishes" />
-        <div className="w-full h-[674px] bg-[url('../public/assets/bg_rsv.png')] px-[21px] py-[70px]">
+        <div className="w-full h-[674px] bg-[url('../public/assets/bg_rsv.png')] px-[21px] py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center w-[390px] h-[548px] px-10 bg-[url('../public/assets/bg_rsv_form.png')]">
             <h2
               className={`${playfairDisplay.className} text-gold font-bold text-[24px]`}
             >
               Are you attended?
             </h2>
-            <form action="" className="flex flex-col items-center gap-12 mt-[29px] w-full">
+            <form
+              action=""
+              className="flex flex-col items-center gap-8 mt-[29px] w-full"
+            >
               <div className="border-2 border-gold h-[45px] w-full p-3 rounded-[10px]">
                 <input
                   type="text"
-                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0`}
+                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0 text-[12px]`}
                   placeholder="Name"
                 />
               </div>
-              <div className="border-2 border-gold h-[45px] w-full p-3 rounded-[10px]">
-                <input
-                  type="text"
-                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0`}
-                  placeholder="Name"
-                />
+              <div className="border-2 border-gold text-gold text-[12px] h-[45px] w-full p-3 rounded-[10px]">
+                <select name="" id="" className="bg-transparent w-full">
+                  <option value="true">Hadir / Attend</option>
+                  <option value="false">Tidak Hadir / No Attend</option>
+                </select>
               </div>
               <div className="w-full">
                 <textarea
                   name=""
                   id=""
-                  className={`${playfairDisplay.className}  text-gold border-2 border-gold  w-full p-3 rounded-[10px] focus:outline-none`}
+                  placeholder="Message"
+                  className={`${playfairDisplay.className}  text-gold border-2 text-[12px] border-gold  w-full p-3 rounded-[10px] focus:outline-none`}
                 ></textarea>
               </div>
             </form>
           </div>
         </div>
-      </div>
+      </section>
     </>
   );
 }
