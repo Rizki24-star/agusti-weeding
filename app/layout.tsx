@@ -17,6 +17,9 @@ export default function RootLayout({
         <main className="max-w-[430px] mx-auto bg-white overflow-x-hidden overflow-y-auto h-screen">
           {children}
         </main>
+        <div className="absolute bg-transparent bottom-0 w-full  flex justify-end p-4">
+          <button className="bg-white w-6 h-6 rounded-full"></button>
+        </div>
       </body>
     </html>
   );
