@@ -41,14 +41,17 @@ const WishList = () => {
   }
 
   return (
-    <div className="flex flex-col gap-2 py-2 max-h-[300px]  overflow-y-auto no-scrollbar">
-      {wishes.length > 0 ? (
-        wishes.map((wish, i) => <MessageBox key={i.toString()} {...wish} />)
-      ) : (
-        <p className={`${playUsTrad} w-full text-gold font-bold italic`}>
-          No wish found
-        </p>
-      )}
+    <div className="py-2 px-[30px] text-gold font-bold">
+      <h4>{wishes.length} Wishes</h4>
+      <div className="flex flex-col gap-2 py-2 max-h-[300px]  overflow-y-auto no-scrollbar">
+        {wishes.length > 0 ? (
+          wishes.map((wish, i) => <MessageBox key={i.toString()} {...wish} />)
+        ) : (
+          <p className={`${playUsTrad} w-full text-gold font-bold italic`}>
+            No wish found
+          </p>
+        )}
+      </div>
     </div>
   );
 };

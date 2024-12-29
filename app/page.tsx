@@ -267,10 +267,7 @@ export default function Home() {
               </div>
             </form> */}
           </div>
-          <div className="py-2 px-[30px] text-gold font-bold">
-            <h4>19 Wishes</h4>
-            <WishList />
-          </div>
+          <WishList />
         </div>
       </section>
       {/* </Wishes> */}

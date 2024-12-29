@@ -1,11 +1,12 @@
 import { playfairDisplay } from '@/app/font';
-import { Wish } from '@/types';
-import React, { useState } from 'react';
+import { Reply, Wish } from '@/types';
+import React, { useEffect, useState } from 'react';
 import WishForm from './WishForm';
 import { motion } from 'motion/react';
 import ReplyList from './ReplyList';
 import Image from 'next/image';
 import { reply } from '@/public/assets';
+import useStore from '@/app/stores/wish-store';
 
 type MessageBoxProps = Wish;
 
@@ -18,6 +19,19 @@ const MessageBox = ({
 }: MessageBoxProps) => {
   const [openReply, setOpenReply] = useState<boolean>(false);
   console.log('message-box' + id);
+
+  const { getWish } = useStore();
+  const [replies, setReplies] = useState<Reply[]>([]);
+
+  const getReplies = async () => {
+    const wish = await getWish(id);
+    setReplies(wish?.replies ?? []);
+  };
+
+  useEffect(() => {
+    getReplies();
+  }, [getReplies, getWish, replies]);
+
   return (
     <div
       className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
@@ -44,7 +58,7 @@ const MessageBox = ({
             className="flex items-center gap-1 cursor-pointer"
           >
             <Image src={reply} width={7} height={6} alt="reply-icon" />
-            Balas (2)
+            Balas ({replies.length})
           </span>
           {openReply ? (
             <motion.div
