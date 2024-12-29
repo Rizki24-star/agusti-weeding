@@ -1,7 +1,8 @@
-import { playUsTrad, roboto } from "@/app/font";
-import Image from "next/image";
-import Link from "next/link";
-import React from "react";
+import { playUsTrad, roboto } from '@/app/font';
+import Image from 'next/image';
+import Link from 'next/link';
+import React from 'react';
+import { motion } from 'motion/react';
 
 interface BrideCardProps {
   photo: string;
@@ -20,7 +21,10 @@ const BrideCard = ({
 }: BrideCardProps) => {
   return (
     <div className=" w-full px-[30px] bg-cover py-[34px]">
-      <div className=" flex flex-col justify-center items-center ">
+      <motion.div
+        whileInView={{ opacity: 1 }}
+        className=" flex flex-col justify-center items-center "
+      >
         <Image
           src={photo}
           alt="bride-photo"
@@ -37,7 +41,11 @@ const BrideCard = ({
             Putra pertama dari :
           </p>
           <p className={`${roboto.className} text-gold`}>{parentsName}</p>
-          <button className="bg-lightBrown px-[11px] py-[8px] rounded-[10px] mt-[22px]">
+          <motion.button
+            whileHover={{ scale: 1.1 }}
+            whileTap={{ scale: 0.95 }}
+            className="bg-lightBrown px-[11px] py-[8px] rounded-[10px] mt-[22px]"
+          >
             <Link href={ig_link}>
               <div className="flex items-center justify-center gap-2">
                 <Image
@@ -51,9 +59,9 @@ const BrideCard = ({
                 </span>
               </div>
             </Link>
-          </button>
+          </motion.button>
         </div>
-      </div>
+      </motion.div>
     </div>
   );
 };

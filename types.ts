@@ -1,14 +1,17 @@
-import { Timestamp } from "firebase/firestore";
+import { Timestamp } from 'firebase/firestore';
 
 export type Wish = {
   id: string;
-  attendance: boolean;
+  parentId?: string | null;
+  attendance: string;
   level: number;
   message: string;
   name: string;
-  replies: string | null;
-  status: "parent" | "child";
+  status: 'parent' | 'child';
   createdAt: Timestamp;
+  replies?: Reply[];
 };
 
-export type WishPost = Omit<Wish, "id">;
+export type Reply = Wish;
+
+export type WishPost = Omit<Wish, 'id'>;

@@ -1,14 +1,19 @@
-"use client";
-import Image from "next/image";
-import { playfairDisplay, roboto, playUsTrad } from "./font";
-import TitleSection from "@/components/TitleSection";
-import BrideCard from "@/components/BrideCard";
-import { bride1, bride2, event1, event2 } from "@/constants/data";
-import bgFlower from "@/public/assets/bg_flower.png";
-import cardBow from "@/public/assets/card_bow.png";
-import EventCard from "@/components/EventCard";
-import { openingFlowerVertical } from "@/public/assets";
-// import "";
+'use client';
+import Image from 'next/image';
+import { playfairDisplay, roboto, playUsTrad } from './font';
+import TitleSection from '@/components/TitleSection';
+import BrideCard from '@/components/BrideCard';
+import { bride1, bride2, event1, event2 } from '@/constants/data';
+import bgFlower from '@/public/assets/bg_flower.png';
+import cardBow from '@/public/assets/card_bow.png';
+import EventCard from '@/components/EventCard';
+import { openingFlowerVertical } from '@/public/assets';
+import WishList from '@/components/WishList';
+import WishForm from '@/components/WishForm';
+import { motion } from 'motion/react';
+
+// TODO: add music
+// TODO: add opening cover
 
 export default function Home() {
   return (
@@ -28,11 +33,14 @@ export default function Home() {
         `}</style>
         <div className="absolute inset-0 gradient-linear opacity-[0.54]"></div>
         <div className="flex flex-col justify-between h-full">
-          <h1
+          <motion.h1
+            initial={{ scale: 0.5 }}
+            animate={{ scale: 1 }}
+            transition={{ ease: 'easeOut', duration: 2 }}
             className={`text-center text-4xl pt-[160px] ${playfairDisplay.className} font-bold text-navy`}
           >
             Agusti & Bertaria
-          </h1>
+          </motion.h1>
           <div className="mx-[30px] text-white z-10 mb-[129px]">
             <p className={`${roboto.className} font-bold text-[30px]`}>
               February 8, 2025
@@ -90,7 +98,7 @@ export default function Home() {
               </h5>
               <span className={`${roboto.className} text-gold`}>
                 Many variations of passages of Lorem Ipsum available, but the
-                majority have{" "}
+                majority have{' '}
               </span>
             </div>
             <div className="flex flex-col gap-y-6">
@@ -146,6 +154,7 @@ export default function Home() {
       <section>
         <Image src={bgFlower} alt="flower" />
         {/* countdown timer  */}
+        {/* Countdown timer functionality */}
         <div className="flex items-center justify-between mx-[30px]">
           <div className="text-gold font-bold text-center">
             <h1 className="text-[32px]">03</h1>
@@ -220,6 +229,7 @@ export default function Home() {
         <TitleSection title="Galery Photos" />
       </section>
       {/* rsv & wishes  */}
+      {/* <Wishes> */}
       <section className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
         <TitleSection title="RSV & Wishes" />
         <div className="w-full  bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
@@ -229,7 +239,8 @@ export default function Home() {
             >
               Are you attended?
             </h2>
-            <form
+            {<WishForm />}
+            {/* <form
               action=""
               className="flex flex-col items-center gap-8 mt-[29px] w-full"
             >
@@ -254,177 +265,15 @@ export default function Home() {
                   className={`${playfairDisplay.className}  text-gold border-2 text-[12px] border-gold  w-full p-3 rounded-[10px] focus:outline-none`}
                 ></textarea>
               </div>
-            </form>
+            </form> */}
           </div>
           <div className="py-2 px-[30px] text-gold font-bold">
             <h4>19 Wishes</h4>
-          </div>
-          <div className="flex flex-col gap-2 py-2 max-h-[300px]  overflow-y-auto px-[30px]">
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
-            <div
-              className={`${playfairDisplay.className} py-[10px] px-[16px] bg-white rounded-[10px] shadow-md`}
-            >
-              <div className="flex items-center justify-between">
-                <p className=" text-[10px] text-gold font-bold">Friend</p>
-                <span className=" text-[10px] text-navy">12 jam yang lalu</span>
-              </div>
-              <p className=" text-[10px] text-gold">
-                Selamat ya dakku, semoga lancar2 sampai hari h ya, Tuhan yesis
-                memberkati
-              </p>
-              {/* reply section  */}
-              <div className="">
-                <div className="flex items-center gap-1 text-[10px]">
-                  <span className="">Balas (2)</span>
-                </div>
-              </div>
-            </div>
+            <WishList />
           </div>
         </div>
       </section>
+      {/* </Wishes> */}
     </>
   );
 }
