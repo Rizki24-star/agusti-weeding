@@ -17,7 +17,7 @@ const ReplyList = ({ parentId }: { parentId: string }) => {
   }, [getReplies, getWish, replies]);
 
   return (
-    <div className="ms-2 flex flex-col py-1 max-h-[300px]  overflow-y-auto">
+    <div className="ms-3 flex flex-col py-1 max-h-[300px]  overflow-y-auto">
       {replies.length > 0
         ? replies.map((reply, i) => (
             <ReplyMessageBox key={i.toString()} {...reply} />

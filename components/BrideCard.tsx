@@ -29,9 +29,9 @@ const BrideCard = ({
           src={photo}
           alt="bride-photo"
           // TODO:  fixing widht and height
-          width={200}
-          height={207}
-          className="rounded-full object-contain"
+          width={250}
+          height={250}
+          className="rounded-full w-[250px] h-[250px] object-contain border-black shadow-md"
         />
         <div className="w-full mt-[35px]">
           <h5 className={`${playUsTrad.className} text-navy text-[18px]`}>

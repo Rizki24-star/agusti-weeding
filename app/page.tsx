@@ -33,14 +33,11 @@ export default function Home() {
         `}</style>
         <div className="absolute inset-0 gradient-linear opacity-[0.54]"></div>
         <div className="flex flex-col justify-between h-full">
-          <motion.h1
-            initial={{ scale: 0.5 }}
-            animate={{ scale: 1 }}
-            transition={{ ease: 'easeOut', duration: 2 }}
+          <h1
             className={`text-center text-4xl pt-[160px] ${playfairDisplay.className} font-bold text-navy`}
           >
             Agusti & Bertaria
-          </motion.h1>
+          </h1>
           <div className="mx-[30px] text-white z-10 mb-[129px]">
             <p className={`${roboto.className} font-bold text-[30px]`}>
               February 8, 2025
@@ -153,9 +150,8 @@ export default function Home() {
       {/* gift and hours  */}
       <section>
         <Image src={bgFlower} alt="flower" />
-        {/* countdown timer  */}
         {/* Countdown timer functionality */}
-     <CountDownDate />
+        <CountDownDate />
         <div className="text-center mt-[34px]">
           <i className={`${playfairDisplay.className} text-[14px] text-gold`}>
             TUHAN Allah berfirman: {'"Tidak baik, kalau'}
@@ -223,37 +219,10 @@ export default function Home() {
               Are you attended?
             </h2>
             {<WishForm />}
-            {/* <form
-              action=""
-              className="flex flex-col items-center gap-8 mt-[29px] w-full"
-            >
-              <div className="border-2 border-gold h-[45px] w-full p-3 rounded-[10px]">
-                <input
-                  type="text"
-                  className={`${playfairDisplay.className} text-gold focus:outline-none p-0 text-[12px]`}
-                  placeholder="Name"
-                />
-              </div>
-              <div className="border-2 border-gold text-gold text-[12px] h-[45px] w-full p-3 rounded-[10px]">
-                <select name="" id="" className="bg-transparent w-full">
-                  <option value="true">Hadir / Attend</option>
-                  <option value="false">Tidak Hadir / No Attend</option>
-                </select>
-              </div>
-              <div className="w-full">
-                <textarea
-                  name=""
-                  id=""
-                  placeholder="Message"
-                  className={`${playfairDisplay.className}  text-gold border-2 text-[12px] border-gold  w-full p-3 rounded-[10px] focus:outline-none`}
-                ></textarea>
-              </div>
-            </form> */}
           </div>
           <WishList />
         </div>
       </section>
-      {/* </Wishes> */}
     </>
   );
 }

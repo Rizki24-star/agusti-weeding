@@ -15,7 +15,7 @@ const ReplyMessageBox = ({
     >
       <div className="flex items-center justify-between">
         <p className="text-[12px] text-gold font-bold">
-          {name} ({attendance ? 'Hadir' : 'Tidak Hadir'})
+          {name} {attendance ? '(Hadir)' : attendance ? '(Tidak Hadir)' : ''}
         </p>
         <span className=" text-[10px] text-navy">
           {new Date(createdAt?.toDate()).toDateString()}

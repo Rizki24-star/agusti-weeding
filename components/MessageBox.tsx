@@ -55,7 +55,7 @@ const MessageBox = ({
         <div className="flex flex-col  gap-1 text-[10px]">
           <span
             onClick={() => setOpenReply(!openReply)}
-            className="flex items-center gap-1 cursor-pointer"
+            className="flex items-center gap-1 text-navy cursor-pointer"
           >
             <Image src={reply} width={7} height={6} alt="reply-icon" />
             Balas ({replies.length})

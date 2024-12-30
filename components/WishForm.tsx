@@ -113,10 +113,10 @@ const WishForm = ({ parentId }: { parentId?: string }) => {
           />
         </div>
         {parentId ? null : (
-          <div className="border-2 border-gold text-gold text-[12px] h-[45px] w-full p-3 rounded-[10px]">
+          <div className="border-2 border-gold text-gold text-[12px] h-[45px] w-full p-3 rounded-[10px] ">
             <select
               name="attendance"
-              className="bg-transparent w-full"
+              className="bg-transparent w-full focus:outline-0"
               onChange={handleSelectOptionChange}
               value={wishPost.attendance}
               required
