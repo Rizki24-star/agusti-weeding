@@ -10,7 +10,7 @@ import EventCard from '@/components/EventCard';
 import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
-import { motion } from 'motion/react';
+import CountDownDate from '@/components/CountDownDate';
 
 // TODO: add music
 // TODO: add opening cover
@@ -155,24 +155,7 @@ export default function Home() {
         <Image src={bgFlower} alt="flower" />
         {/* countdown timer  */}
         {/* Countdown timer functionality */}
-        <div className="flex items-center justify-between mx-[30px]">
-          <div className="text-gold font-bold text-center">
-            <h1 className="text-[32px]">03</h1>
-            <p className="text-[16px]">Days</p>
-          </div>
-          <div className="text-gold font-bold text-center">
-            <h1 className="text-[32px]">15</h1>
-            <p className="text-[16px]">Hours</p>
-          </div>
-          <div className="text-gold font-bold text-center">
-            <h1 className="text-[32px]">23 </h1>
-            <p className="text-[16px]">Minutes</p>
-          </div>
-          <div className="text-gold font-bold text-center">
-            <h1 className="text-[32px]">55</h1>
-            <p className="text-[16px]">Second</p>
-          </div>
-        </div>
+     <CountDownDate />
         <div className="text-center mt-[34px]">
           <i className={`${playfairDisplay.className} text-[14px] text-gold`}>
             TUHAN Allah berfirman: {'"Tidak baik, kalau'}
