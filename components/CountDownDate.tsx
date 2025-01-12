@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import Countdown, { CountdownTimeDelta } from 'react-countdown';
 
 const renderer = ({
@@ -37,12 +37,16 @@ const renderer = ({
 };
 
 const CountDownDate = () => {
-  return (
-    <Countdown
-      date={Date.now() + (new Date(2025, 1, 8).getTime() - Date.now())}
-      renderer={renderer}
-    ></Countdown>
-  );
+  const [targetDate, setTargetDate] = useState<number>();
+  useEffect(() => {
+    setTargetDate(Date.now() + (new Date(2025, 1, 8).getTime() - Date.now()));
+  }, []);
+
+  if (!targetDate) {
+    return null;
+  }
+
+  return <Countdown date={targetDate} renderer={renderer}></Countdown>;
 };
 
 export default CountDownDate;
