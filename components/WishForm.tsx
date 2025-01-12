@@ -1,4 +1,3 @@
-'use client';
 import React, { ChangeEvent, useState, FormEvent } from 'react';
 import {
   addDoc,

@@ -1,35 +1,102 @@
 export const bride1 = {
-  photo: "/assets/weeding_single_1.jpg",
-  name: "Agusti Frananda Alfonsus nibaho",
-  parentsName: "Timbun Naibaho dan Tio Klara Gultom",
-  ig_link: "string",
-  ig_username: "agustinaibaho",
+  photo:
+    'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214286/weeding_single_1_iv9yen.jpg',
+  name: 'Agusti Frananda Alfonsus Naibaho',
+  parentsName: 'Bapak T. Naibaho dan Ibu T. Gultom',
+  ig_link: 'string',
+  ig_username: 'agustifrananda',
 };
 
 export const bride2 = {
-  photo: "/assets/weeding_single_2.jpg",
-  name: "Betharia Crisdayanti Sitorus",
-  parentsName: "Timbun Naibaho dan Tio Klara Gultom",
-  ig_link: "string",
-  ig_username: "betharia",
+  photo:
+    'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214288/weeding_single_2_cjeduv.jpg',
+  name: 'Betharia Crisdayanti Sitorus',
+  parentsName: 'Bapak B. Sitorus dan Ibu J. Napitupulu',
+  ig_link: 'string',
+  ig_username: 'bethariacrisdayanti',
 };
 
 export const event1 = {
-  title: "Pemberkatan",
-  background: "/assets/weeding_open.jpg",
-  date: "February 8, 2024<br/>09.30 WIB s/d Selesai",
-  location: "Gereja Katolik Paroki St. Fransiskus Assisi Padang Baru",
+  title: 'Pemberkatan',
+  background:
+    'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_open_rgfalt.jpg',
+  date: 'February 8, 2024<br/>09.00 WIB s/d Selesai',
+  location: 'Gereja Katolik Paroki St. Fransiskus Assisi Padang Baru',
   address:
-    "Jl. Jendral Sudirman No. 50, Jati Baru, Kec. Padang Timur, Kota Padang, Sumatera Barat",
-  mapLink: "link",
+    'Jln. Jenderal Sudirman No. 50, Jati Baru, Padang Timur, Kota Padang, Sumatera Barat, Indonesia',
+  mapLink: 'link',
 };
 
 export const event2 = {
-  title: "Pemberkatan",
-  background: "/assets/weeding_2.jpg",
-  date: "February 8, 2024<br/>09.30 WIB s/d Selesai",
-  location: "Gereja Katolik Paroki St. Fransiskus Assisi Padang Baru",
-  address:
-    "Jl. Jendral Sudirman No. 50, Jati Baru, Kec. Padang Timur, Kota Padang, Sumatera Barat",
-  mapLink: "link",
+  title: 'Adat Resepsi',
+  background:
+    'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_2_l7vn2h.jpg',
+  date: 'February 8, 2024<br/>11.00 WIB s/d Selesai',
+  location: 'Gedung Serba Guna HKBP Padang',
+  address: 'Jln. Gurun Dalam Padang, Sumatera Barat, Indonesia',
+  mapLink: 'link',
 };
+
+export const loveStories = [
+  {
+    time: 'Agustus 2015',
+    story:
+      'Kami pertama berjumpa di gerbang SMA RK Bintang Timur Pematangsiantar. Lalu memulai perkenalan dan menjadi teman.',
+  },
+  {
+    time: 'November 2015',
+    story:
+      'Setelah lamanya perkenalan dan berteman, akhirnya Agusti memutuskan untuk mengajak Betharia untuk menjalin hubungan.',
+  },
+  {
+    time: 'Juni 2016',
+    story:
+      'Kami memutuskan untuk putus hubungan dikarenakan fokus untuk sekolah atau pendidikan masing-masing.',
+  },
+  {
+    time: 'Agustus & September 2019',
+    story:
+      'Kami kembali memulai komunikasi dan kembali menjalin hubungan. Kami menjalin hubungan jarak jauh dan sesekali berjumpa saat libur tertentu.',
+  },
+  {
+    time: 'April 2024',
+    story:
+      'Saat masih menjalin hubungan jarak jauh, Agusti melamar Betharia. Betharia menerima ajakan Agusti untuk ke jenjang yang lebih serius.',
+  },
+  {
+    time: 'September 2024',
+    story:
+      'Kami memutuskan untuk mempertemukan keluarga kami untuk membahas rencana kami selanjutnya.',
+  },
+  {
+    time: 'Februari 2025',
+    story: 'Kami akan mengikat hubungan kami dalam Sakramen Perkawinan.',
+  },
+];
+
+export const galeries = [
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258423/galery_2_w8w77o.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258423/galery_1_xq6qe2.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258423/galery_4_w14rni.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258424/galery_6_vtpvfi.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258427/galery_8_o895zy.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736260267/galery_6_kestti.jpg',
+    description: '',
+  },
+];

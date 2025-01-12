@@ -3,7 +3,7 @@ import Image from 'next/image';
 import { playfairDisplay, roboto, playUsTrad } from './font';
 import TitleSection from '@/components/TitleSection';
 import BrideCard from '@/components/BrideCard';
-import { bride1, bride2, event1, event2 } from '@/constants/data';
+import { bride1, bride2, event1, event2, galeries, loveStories } from '@/constants/data';
 import bgFlower from '@/public/assets/bg_flower.png';
 import cardBow from '@/public/assets/card_bow.png';
 import EventCard from '@/components/EventCard';
@@ -19,7 +19,7 @@ export default function Home() {
   return (
     <>
       {/* Opening Section */}
-      <section className="relative h-screen bg-[url('../public/assets/img_opening.png')] bg-cover bg-center">
+      <section className="relative h-screen bg-[url('https://res.cloudinary.com/dzhce2fub/image/upload/v1736214290/img_opening_dm7frq.jpg')] bg-cover bg-center">
         <style jsx>{`
           .gradient-linear {
             background: linear-gradient(
@@ -89,16 +89,17 @@ export default function Home() {
           <TitleSection title="Our Love Story" />
           <BrideCard {...bride1} />
           <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20">
-            <div className="flex flex-col gap-y-6">
-              <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
-                First Meet
-              </h5>
-              <span className={`${roboto.className} text-gold`}>
-                Many variations of passages of Lorem Ipsum available, but the
-                majority have{' '}
-              </span>
-            </div>
-            <div className="flex flex-col gap-y-6">
+            {loveStories.map((item, i) => (
+              <div key={i.toString()} className="flex flex-col gap-y-6">
+                <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
+                  {item.time}
+                </h5>
+                <span className={`${roboto.className} text-gold`}>
+                  {item.story}
+                </span>
+              </div>
+            ))}
+            {/* <div className="flex flex-col gap-y-6">
               <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
                 Love Story
               </h5>
@@ -111,7 +112,7 @@ export default function Home() {
               <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
                 Weeding Day
               </h5>
-            </div>
+            </div> */}
           </div>
           <BrideCard {...bride2} />
         </div>
@@ -152,24 +153,26 @@ export default function Home() {
         <Image src={bgFlower} alt="flower" />
         {/* Countdown timer functionality */}
         <CountDownDate />
-        <div className="text-center mt-[34px]">
-          <i className={`${playfairDisplay.className} text-[14px] text-gold`}>
-            TUHAN Allah berfirman: {'"Tidak baik, kalau'}
-            <br />
-            manusia itu seorang diri saja. Aku akan
-            <br />
-            {'menjadikan penolong baginya, yang sepadan dengan dia".'}
+        <div className="text-center mt-[34px] mx-[30px]">
+          <i
+            className={`${playfairDisplay.className} text-[14px] text-gold italic`}
+          >
+            Dan firman-Nya: Sebab itu laki-laki akan meninggalkan ayah dan
+            ibunya dan bersatu dengan isterinya, sehingga keduanya itu menjadi
+            satu daging. Demikianlah mereka bukan lagi dua, melainkan satu.
+            Karena itu, apa yang telah dipersatukan Allah, tidak boleh
+            diceraikan manusia.
           </i>
           <p
             className={`${playfairDisplay.className} font-bold text-gold mt-[20px]`}
           >
-            Kejadian 2:8
+            Matius 19:5-6
           </p>
         </div>
         {/* weeding gift card  */}
         <div className="px-[18px] mb-[88px]">
           {/* weeding gift  */}
-          <div className="text-center mt-[68px] shadow-lg py-[28px] rounded-[10px]">
+          <div className="text-center mt-[68px] shadow-lg py-[28px] rounded-[10px] px-[10px]">
             <h3 className={`${playUsTrad.className} text-gold text-[20px]`}>
               Weeding Gift
             </h3>
@@ -188,24 +191,64 @@ export default function Home() {
             </button>
             <div className={`${roboto.className} text-center mt-[39px]`}>
               <h1 className={`text-navy font-bold text-[24px]`}>BCA</h1>
-              <p className="font-bold text-gold">5485126381</p>
-              <p className="text-gold">Betaria Sitorus</p>
+              <p className="font-bold text-gold">1630602340</p>
+              <p className="text-gold">Agusti Frananda A. Naibaho</p>
             </div>
             <div className={`${roboto.className} text-center mt-[47px]`}>
               <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
               <p className="font-bold text-gold">
                 Penerima:
-                <br /> Agusti Naibaho (085297598063)
+                <br /> Agusti Frananda A. Naibaho (0895359640687)
               </p>
               <p className="text-gold">
-                Jln. Gelong Baru Tengah no.23 Tomang, Grogol Petamburan. Jakarta
-                Barat 11440
+                Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
+                Sumatera Barat, 25581
               </p>
             </div>
             <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />
           </div>
         </div>
         <TitleSection title="Galery Photos" />
+        <div className="flex flex-wrap  gap-2 mx-[30px]">
+          {galeries.map((galery, i) => (
+            <div
+              key={i.toString()}
+              className="max-w-[180px] max-h-[280] cursor-pointer"
+            >
+              <Image
+                src={galery.url}
+                alt={`image-galery-${i}`}
+                className="w-full h-full rounded-[10px] shadow-md"
+                width={150}
+                height={100}
+              />
+            </div>
+          ))}
+        </div>
+        {/* galery slider  */}
+        {galeries.map((galery, i) => (
+          <div key={i} className="absolute inset-0 w-full h-screen bg-white bg-opacity-15 z-50 flex flex-col items-center justify-start">
+            <div className="flex justify-between py-4 w-full px-[30px]">
+              <div>1/24</div>
+              <div className="flex items-center gap-2">
+                <button>Foward</button>
+                <button>+</button>
+                <button>X</button>
+              </div>
+            </div>
+            <div className="my-auto w-full max-h-[80%] flex items-center justify-between overflow-x-auto">
+              <div className="px-4">{'<'}</div>
+              <Image
+                src={galery.url}
+                alt={`image-galery-${i}`}
+                className="rounded-[10px] m-auto w-full h-full object-contain"
+                width={250}
+                height={100}
+              />
+              <div className="px-4">{'>'}</div>
+            </div>
+          </div>
+        ))}
       </section>
       {/* rsv & wishes  */}
       {/* <Wishes> */}

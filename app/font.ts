@@ -10,6 +10,7 @@ export const playfairDisplay = Playfair_Display({
   weight: ["400", "500", "700"],
   subsets: ["latin"],
   display: "swap",
+  style: ['italic', 'normal']
 });
 
 export const playUsTrad = Playwrite_US_Trad({

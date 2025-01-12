@@ -28,7 +28,6 @@ const BrideCard = ({
         <Image
           src={photo}
           alt="bride-photo"
-          // TODO:  fixing widht and height
           width={250}
           height={250}
           className="rounded-full w-[250px] h-[250px] object-contain border-black shadow-md"
