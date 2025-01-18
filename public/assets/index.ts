@@ -1,6 +1,7 @@
 import { default as arrow } from './arrow.png';
 import {default as audioPlay } from './ic_audio-play.png';
 import { default as audioPause } from './ic_audio-pause.png';
+import {default as  iArrow} from "./ic_arrow.png";
 import { default as bgFlower } from './bg_flower.png';
 import { default as bgRsvForm } from './bg_rsv_form.png';
 import { default as bgRsv } from './bg_rsv.png';
@@ -27,6 +28,7 @@ export {
   cardBow,
   flowerTitle,
   icInstragram,
+  iArrow,
   imgOpening,
   openingFlower,
   openingFlowerVertical,
