@@ -3,9 +3,14 @@ import Image from 'next/image';
 import { playfairDisplay, roboto, playUsTrad } from './font';
 import TitleSection from '@/components/TitleSection';
 import BrideCard from '@/components/BrideCard';
-import { bride1, bride2, event1, event2, galeries, loveStories } from '@/constants/data';
+import {
+  bride1,
+  bride2,
+  event1,
+  event2,
+  loveStories,
+} from '@/constants/data';
 import bgFlower from '@/public/assets/bg_flower.png';
-import cardBow from '@/public/assets/card_bow.png';
 import EventCard from '@/components/EventCard';
 import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
@@ -16,6 +21,7 @@ import WeedingGiftCard from '@/components/WeedingGiftCard';
 
 // TODO: add music
 // TODO: add opening cover
+// TODO: Fetch all image from cloudinary
 
 export default function Home() {
   return (
@@ -172,85 +178,10 @@ export default function Home() {
           </p>
         </div>
         {/* weeding gift card  */}
-        <div className="px-[18px] mb-[88px]">
-          {/* weeding gift  */}
-          <div className="text-center mt-[68px] shadow-lg py-[28px] rounded-[10px] px-[10px]">
-            <h3 className={`${playUsTrad.className} text-gold text-[20px]`}>
-              Weeding Gift
-            </h3>
-            <p
-              className={`${playUsTrad.className} text-gold text-[12px] mt-[22px]`}
-            >
-              Doa restu anda merupakan karunia yang sangat
-              <br /> berarti bagi kami. Jika memberi adalah ungkapan
-              <br /> tanda kasih, anda dapat memberi kado ke alamat berikut
-              <br /> atau pun secara cashless.
-            </p>
-            <button
-              className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px]`}
-            >
-              Klik Disini
-            </button>
-            <div className={`${roboto.className} text-center mt-[39px]`}>
-              <h1 className={`text-navy font-bold text-[24px]`}>BCA</h1>
-              <p className="font-bold text-gold">1630602340</p>
-              <p className="text-gold">Agusti Frananda A. Naibaho</p>
-            </div>
-            <div className={`${roboto.className} text-center mt-[47px]`}>
-              <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
-              <p className="font-bold text-gold">
-                Penerima:
-                <br /> Agusti Frananda A. Naibaho (0895359640687)
-              </p>
-              <p className="text-gold">
-                Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
-                Sumatera Barat, 25581
-              </p>
-            </div>
-            <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />
-          </div>
-        </div>
+        <WeedingGiftCard />
         <TitleSection title="Galery Photos" />
-        <div className="flex flex-wrap  gap-2 mx-[30px]">
-          {galeries.map((galery, i) => (
-            <div
-              key={i.toString()}
-              className="max-w-[180px] max-h-[280] cursor-pointer"
-            >
-              <Image
-                src={galery.url}
-                alt={`image-galery-${i}`}
-                className="w-full h-full rounded-[10px] shadow-md"
-                width={150}
-                height={100}
-              />
-            </div>
-          ))}
-        </div>
         {/* galery slider  */}
-        {galeries.map((galery, i) => (
-          <div key={i} className="absolute inset-0 w-full h-screen bg-white bg-opacity-15 z-50 flex flex-col items-center justify-start">
-            <div className="flex justify-between py-4 w-full px-[30px]">
-              <div>1/24</div>
-              <div className="flex items-center gap-2">
-                <button>Foward</button>
-                <button>+</button>
-                <button>X</button>
-              </div>
-            </div>
-            <div className="my-auto w-full max-h-[80%] flex items-center justify-between overflow-x-auto">
-              <div className="px-4">{'<'}</div>
-              <Image
-                src={galery.url}
-                alt={`image-galery-${i}`}
-                className="rounded-[10px] m-auto w-full h-full object-contain"
-                width={250}
-                height={100}
-              />
-              <div className="px-4">{'>'}</div>
-            </div>
-          </div>
-        ))}
+        <ImageSlider />
       </section>
       {/* rsv & wishes  */}
       {/* <Wishes> */}

@@ -1,3 +1,4 @@
+"use client"
 import { Wish } from "@/types";
 import React from "react";
 

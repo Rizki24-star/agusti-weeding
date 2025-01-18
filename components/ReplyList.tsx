@@ -1,4 +1,5 @@
-import React, { useEffect, useState } from 'react';
+'use client';
+import React, { useCallback, useEffect, useState } from 'react';
 import ReplyMessageBox from './ReplyMessageBox';
 import { Reply } from '@/types';
 import useStore from '@/app/stores/wish-store';
@@ -7,10 +8,10 @@ const ReplyList = ({ parentId }: { parentId: string }) => {
   const { getWish } = useStore();
   const [replies, setReplies] = useState<Reply[]>([]);
 
-  const getReplies = async () => {
+  const getReplies = useCallback(async () => {
     const wish = await getWish(parentId);
     setReplies(wish?.replies ?? []);
-  };
+  }, [getWish, parentId]);
 
   useEffect(() => {
     getReplies();

@@ -1,6 +1,7 @@
+"use client"
 import { playfairDisplay } from '@/app/font';
 import { Reply, Wish } from '@/types';
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 import WishForm from './WishForm';
 import { motion } from 'motion/react';
 import ReplyList from './ReplyList';
@@ -23,10 +24,10 @@ const MessageBox = ({
   const { getWish } = useStore();
   const [replies, setReplies] = useState<Reply[]>([]);
 
-  const getReplies = async () => {
+  const getReplies = useCallback( async () => {
     const wish = await getWish(id);
     setReplies(wish?.replies ?? []);
-  };
+  }, [getWish, id])
 
   useEffect(() => {
     getReplies();

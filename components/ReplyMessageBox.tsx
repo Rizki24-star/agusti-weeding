@@ -1,3 +1,4 @@
+"use client"
 import { playfairDisplay } from '@/app/font';
 import { Reply } from '@/types';
 import React from 'react';

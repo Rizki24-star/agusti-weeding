@@ -1,3 +1,4 @@
+"use client"
 import React, { useEffect, useState } from 'react';
 import MessageBox from './MessageBox';
 import useStore from '@/app/stores/wish-store';
