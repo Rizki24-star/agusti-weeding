@@ -11,6 +11,8 @@ import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
 import CountDownDate from '@/components/CountDownDate';
+import ImageSlider from '@/components/ImageSlider';
+import WeedingGiftCard from '@/components/WeedingGiftCard';
 
 // TODO: add music
 // TODO: add opening cover
