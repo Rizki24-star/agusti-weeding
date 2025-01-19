@@ -1,10 +1,10 @@
-"use client"
+'use client';
 import { galeries } from '@/constants/data';
 import { iArrow } from '@/public/assets';
 import Image from 'next/image';
 import React, { useState } from 'react';
 
-const ImageSlider = () => {
+const Galeries = () => {
   const [selectedImage, setSelectedImage] = useState<number | null>(null);
 
   const handleSelectedImage = (operator: string) => {
@@ -32,20 +32,22 @@ const ImageSlider = () => {
 
   return (
     <>
-      <div className="flex flex-wrap  gap-2 mx-[30px]">
-        {galeries.map((galery, i) => (
-          <div
+     <div className="grid grid-cols-2 gap-3 auto-rows-[160px]">
+        {galeries.map((image,i) => (
+          <div 
             key={i.toString()}
-            className="max-w-[180px] max-h-[280] cursor-pointer"
+            className="relative w-full h-full group overflow-hidden cursor-pointer"
+            onClick={() => setSelectedImage(i + 1)}
           >
             <Image
-              onClick={() => setSelectedImage(i + 1)}
-              src={galery.url}
-              alt={`image-galery-${i}`}
-              className="w-full h-full rounded-[10px] shadow-md object-contain"
-              width={150}
-              height={100}
+              src={image.url}
+              alt={image.description}
+              fill
+              className="object-cover"
+              sizes="50vw"
+              priority={i <= 3} // Load first 4 images immediately
             />
+            <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 active:bg-black/30 transition-colors" />
           </div>
         ))}
       </div>
@@ -55,11 +57,13 @@ const ImageSlider = () => {
         }`}
       >
         <div className="flex justify-between py-4 w-full px-[30px]">
-          <div>{selectedImage}/{galeries.length}</div>
+          <div>
+            {selectedImage}/{galeries.length}
+          </div>
           <div className="flex items-center gap-2">
             <button
               onClick={() => setSelectedImage(null)}
-              className="font-bold text-2xl text-white"
+              className="font-bold text-2xl text-black"
             >
               x
             </button>
@@ -99,4 +103,4 @@ const ImageSlider = () => {
   );
 };
 
-export default ImageSlider;
+export default Galeries;

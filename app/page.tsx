@@ -3,21 +3,15 @@ import Image from 'next/image';
 import { playfairDisplay, roboto, playUsTrad } from './font';
 import TitleSection from '@/components/TitleSection';
 import BrideCard from '@/components/BrideCard';
-import {
-  bride1,
-  bride2,
-  event1,
-  event2,
-  loveStories,
-} from '@/constants/data';
+import { bride1, bride2, event1, event2, loveStories } from '@/constants/data';
 import bgFlower from '@/public/assets/bg_flower.png';
 import EventCard from '@/components/EventCard';
 import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
 import CountDownDate from '@/components/CountDownDate';
-import ImageSlider from '@/components/ImageSlider';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
+import Galeries from '@/components/ImageSlider';
 
 // TODO: add music
 // TODO: add opening cover
@@ -181,11 +175,11 @@ export default function Home() {
         <WeedingGiftCard />
         <TitleSection title="Galery Photos" />
         {/* galery slider  */}
-        <ImageSlider />
+        <Galeries />
       </section>
       {/* rsv & wishes  */}
       {/* <Wishes> */}
-      <section className="flex flex-col items-center justify-center mt-[69px] mb-[34px]">
+      <section className="flex flex-col items-center justify-center mt-[69px]">
         <TitleSection title="RSV & Wishes" />
         <div className="w-full  bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center min-w-[270px] w-full h-[528px] px-12 bg-[url('../public/assets/bg_rsv_form.png')] bg-contain bg-no-repeat bg-center">
@@ -197,6 +191,64 @@ export default function Home() {
             {<WishForm />}
           </div>
           <WishList />
+        </div>
+      </section>
+      <div className="relative -top-8 bg-gold">
+        <div className="absolute flex items-center justify-center z-20">
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+        </div>
+      </div>
+
+      {/* footer  */}
+      <section>
+        <div className="relative flex items-center justify-center bg-navy">
+          <div className="flex flex-col mx-[30px] text-center my-24">
+            <h1
+              className={`${playfairDisplay.className} text-white font-bold text-[32px]`}
+            >
+              Terimaksih
+            </h1>
+            <p
+              className={`${playfairDisplay.className} text-white font-bold text-[16px] mt-6`}
+            >
+              Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
+              Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu
+              kepada kami.
+            </p>
+            <div className='mt-10 flex flex-col items-center gap-4'>
+              <p className={`${roboto.className} text-white`}>
+                Kami yang Berbahagia
+              </p>
+              <h1
+                className={`${playfairDisplay.className} text-white font-bold text-[32px]`}
+              >
+                Agusti & Bertaria
+              </h1>
+              <Image
+                     src={"/assets/flower_title.png"}
+                     alt="title-icon"
+                     width={75}
+                     height={40}
+                   />
+            </div>
+          </div>
         </div>
       </section>
     </>
