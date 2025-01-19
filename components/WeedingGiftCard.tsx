@@ -24,9 +24,9 @@ const WeedingGiftCard = () => {
         </p>
         <button
         onClick={() => setshowInfo(!showInfo)}
-          className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px]`}
+          className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px] font-bold`}
         >
-          Klik Disini
+          Kirim hadiah
         </button>
         <div className={`${roboto.className} ${!showInfo ? 'hidden' : ''}`}>
         <div className={`text-center mt-[39px]`}>

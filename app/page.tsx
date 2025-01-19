@@ -58,15 +58,13 @@ export default function Home() {
             width={155}
             height={63}
           />
-          <div className="w-[120px] h-[120px] bg-white rounded-full left-0 right-0 mx-auto top-[-72px] flex items-center justify-center shadow-md">
-            {/* <div className="flex items-center justify-between"> */}
+          <div className="w-[80px] h-[80px] bg-white rounded-full left-0 right-0 mx-auto top-[-72px] flex items-center justify-center shadow-md">
             <Image
               src="/assets/arrow.png"
               alt="arrow-icon"
-              width={49}
-              height={53}
+              width={30}
+              height={35}
             />
-            {/* </div> */}
           </div>
           <Image
             src="/assets/opening_flower.png"
@@ -82,14 +80,17 @@ export default function Home() {
         <div className="relative">
           <div className="flex justify-between relative">
             <Image src={openingFlowerVertical} alt="vertical-flower" />
+            <div className="pt-8">
+              <TitleSection title="Our Love Story" />
+            </div>
             <Image
               src={openingFlowerVertical}
               alt="vertical-flower"
               className="transform scale-x-[-1]"
             />
           </div>
-          <TitleSection title="Our Love Story" />
           <BrideCard {...bride1} />
+          <BrideCard {...bride2} />
           <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20">
             {loveStories.map((item, i) => (
               <div key={i.toString()} className="flex flex-col gap-y-6">
@@ -101,22 +102,7 @@ export default function Home() {
                 </span>
               </div>
             ))}
-            {/* <div className="flex flex-col gap-y-6">
-              <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
-                Love Story
-              </h5>
-              <span className={`${roboto.className} text-gold`}>
-                Many variations of passages of Lorem Ipsum available, but the
-                majority have
-              </span>
-            </div>
-            <div className="flex flex-col gap-y-6">
-              <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
-                Weeding Day
-              </h5>
-            </div> */}
           </div>
-          <BrideCard {...bride2} />
         </div>
         <div className="h-10" />
         <div className="relative mx-auto z-10">
@@ -232,7 +218,7 @@ export default function Home() {
               Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu
               kepada kami.
             </p>
-            <div className='mt-10 flex flex-col items-center gap-4'>
+            <div className="mt-10 flex flex-col items-center gap-4">
               <p className={`${roboto.className} text-white`}>
                 Kami yang Berbahagia
               </p>
@@ -242,11 +228,11 @@ export default function Home() {
                 Agusti & Bertaria
               </h1>
               <Image
-                     src={"/assets/flower_title.png"}
-                     alt="title-icon"
-                     width={75}
-                     height={40}
-                   />
+                src={'/assets/flower_title.png'}
+                alt="title-icon"
+                width={75}
+                height={40}
+              />
             </div>
           </div>
         </div>
