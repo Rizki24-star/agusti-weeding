@@ -5,13 +5,13 @@ import { Reply } from '@/types';
 import useStore from '@/app/stores/wish-store';
 
 const ReplyList = ({ parentId }: { parentId: string }) => {
-  const { getWish } = useStore();
+  const { getWish, wishes } = useStore();
   const [replies, setReplies] = useState<Reply[]>([]);
 
   const getReplies = useCallback(async () => {
     const wish = await getWish(parentId);
     setReplies(wish?.replies ?? []);
-  }, [getWish, parentId]);
+  }, [getWish, parentId, wishes]);
 
   useEffect(() => {
     getReplies();
