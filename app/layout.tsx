@@ -1,6 +1,5 @@
 import type { Metadata } from 'next';
 import './globals.css';
-import AudioPlay from '@/components/AudioPlay';
 
 export const metadata: Metadata = {
   title: 'Agusti Weeding',
@@ -18,8 +17,6 @@ export default function RootLayout({
         <main className="max-w-[430px] mx-auto bg-white overflow-x-hidden overflow-y-auto h-screen no-scrollbar">
           {children}
         </main>
-        {/* audio play  */}
-        <AudioPlay />
       </body>
     </html>
   );

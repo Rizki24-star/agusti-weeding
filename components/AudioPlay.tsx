@@ -4,36 +4,41 @@ import Image from 'next/image';
 import React, { useEffect, useRef, useState } from 'react';
 import { motion } from 'motion/react';
 
-const AudioPlay = () => {
+const AudioPlay = ({play}: {play: boolean}) => {
   const audioRef = useRef<HTMLAudioElement>(null);
   const [isPlaying, setIsPlaying] = useState(true);
 
   useEffect(() => {
+    console.log("test");
+    
     if (audioRef.current) {
       const attemptAutoplay = async () => {
-        if (audioRef.current) {
-          try {
-            // First try playing with user interaction
-            const playPromise = audioRef.current.play();
-            if (playPromise !== undefined) {
-              await playPromise;
-              setIsPlaying(true);
-            }
-          } catch (err) {
-            console.log('Autoplay blocked:', err);
-            // if autoplay failes, try muted autoplay
+        if (play) {
+          if (audioRef.current) {
             try {
-              audioRef.current.muted = true;
-              await audioRef.current.play();
-              setIsPlaying(true);
-              // After successful muted play, unmute
-              audioRef.current.muted = false;
-            } catch (mutedErr) {
-              console.log('Muted autoplay also failed: ', mutedErr);
-              setIsPlaying(false);
+              // First try playing with user interaction
+              const playPromise = audioRef.current.play();
+              if (playPromise !== undefined) {
+                await playPromise;
+                setIsPlaying(true);
+              }
+            } catch (err) {
+              console.log('Autoplay blocked:', err);
+              // if autoplay failes, try muted autoplay
+              try {
+                audioRef.current.muted = true;
+                await audioRef.current.play();
+                setIsPlaying(true);
+                // After successful muted play, unmute
+                audioRef.current.muted = false;
+              } catch (mutedErr) {
+                console.log('Muted autoplay also failed: ', mutedErr);
+                setIsPlaying(false);
+              }
             }
           }
         }
+        
       };
 
       // Try autoplay when component mounts
@@ -57,7 +62,7 @@ const AudioPlay = () => {
         window.removeEventListener('touchstart', handleFirstInteraction)
       };
    
-  }}, []);
+  }}, [play]);
 
   const togglePlayPause = () => {
     if (!audioRef.current) return;

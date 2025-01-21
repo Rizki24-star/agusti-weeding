@@ -1,5 +1,5 @@
 "use client"
-import { playUsTrad, roboto } from '@/app/font';
+import { cinzel, roboto } from '@/app/font';
 import { cardBow } from '@/public/assets';
 import Image from 'next/image';
 import React, { useState } from 'react';
@@ -11,11 +11,11 @@ const WeedingGiftCard = () => {
     <div className="px-[18px] mb-[88px]">
       {/* weeding gift  */}
       <div className="text-center mt-[68px] shadow-lg py-[28px] rounded-[10px] px-[10px]">
-        <h3 className={`${playUsTrad.className} text-gold text-[20px]`}>
+        <h3 className={`${cinzel.className} text-gold text-[20px] font-bold`}>
           Weeding Gift
         </h3>
         <p
-          className={`${playUsTrad.className} text-gold text-[12px] mt-[22px]`}
+          className={`${cinzel.className} text-gold text-[12px] mt-[22px]`}
         >
           Doa restu anda merupakan karunia yang sangat
           <br /> berarti bagi kami. Jika memberi adalah ungkapan
@@ -38,12 +38,23 @@ const WeedingGiftCard = () => {
           <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
           <p className="font-bold text-gold">
             Penerima:
-            <br /> Agusti Frananda A. Naibaho (0895359640687)
+            <br /> Agusti Frananda A. Naibaho <br/>(0895359640687 - BCA)
           </p>
-          <p className="text-gold">
+          {/* <p className="text-gold">
             Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
             Sumatera Barat, 25581
+          </p> */}
+        </div>
+        <div className={`text-center mt-[47px]`}>
+          <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
+          <p className="font-bold text-gold">
+            Penerima:
+            <br /> Betharia Crisdayanti Sitorus <br/>(1050019878267 - MANDIRI)
           </p>
+          {/* <p className="text-gold">
+            Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
+            Sumatera Barat, 25581
+          </p> */}
         </div>
         </div>
         <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />

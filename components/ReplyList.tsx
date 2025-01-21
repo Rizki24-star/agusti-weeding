@@ -15,6 +15,7 @@ const ReplyList = ({ parentId }: { parentId: string }) => {
 
   useEffect(() => {
     getReplies();
+    console.log("test");
   }, [getReplies, getWish, replies]);
 
   return (

@@ -1,4 +1,4 @@
-import { playUsTrad, roboto } from '@/app/font';
+import { cinzel, playUsTrad, roboto } from '@/app/font';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
@@ -33,7 +33,7 @@ const BrideCard = ({
           className="rounded-full w-[250px] h-[250px] object-contain border-black shadow-md"
         />
         <div className="w-full mt-[35px]">
-          <h5 className={`${playUsTrad.className} text-navy text-[18px]`}>
+          <h5 className={`${cinzel.className} text-navy text-[18px]`}>
             {name}
           </h5>
           <p className={`${roboto.className} text-gold font-bold mt-[26px]`}>

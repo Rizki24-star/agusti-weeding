@@ -40,6 +40,7 @@ const renderer = ({
 const CountDownDate = () => {
   const [targetDate, setTargetDate] = useState<number>();
   useEffect(() => {
+    console.log("test");
     setTargetDate(Date.now() + (new Date(2025, 1, 8).getTime() - Date.now()));
   }, []);
 

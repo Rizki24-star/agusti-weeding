@@ -2,7 +2,7 @@
 import React, { useEffect, useState } from 'react';
 import MessageBox from './MessageBox';
 import useStore from '@/app/stores/wish-store';
-import { playUsTrad } from '@/app/font';
+import { cinzel } from '@/app/font';
 
 const WishList = () => {
   const { wishes, setWishes } = useStore();
@@ -19,12 +19,13 @@ const WishList = () => {
     } finally {
       setLoading(false);
     }
+    console.log("test");
   }, [setWishes]);
 
   if (loading)
     return (
       <p
-        className={`${playUsTrad} mx-[30px] w-full text-gold font-bold italic`}
+        className={`${cinzel.className} mx-[30px] w-full text-gold font-bold italic`}
       >
         Memuat...
       </p>
@@ -33,7 +34,7 @@ const WishList = () => {
   if (error !== '') {
     return (
       <p
-        className={`${playUsTrad} mx-[30px] w-full text-gold font-bold italic`}
+        className={`${cinzel.className} mx-[30px] w-full text-gold font-bold italic`}
       >
         {error}
       </p>
@@ -47,7 +48,7 @@ const WishList = () => {
         {wishes.length > 0 ? (
           wishes.map((wish, i) => <MessageBox key={i.toString()} {...wish} />)
         ) : (
-          <p className={`${playUsTrad} w-full text-gold font-bold italic`}>
+          <p className={`${cinzel.className} w-full text-gold font-bold italic`}>
             No wish found
           </p>
         )}

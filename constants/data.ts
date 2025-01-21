@@ -3,7 +3,7 @@ export const bride1 = {
     'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214286/weeding_single_1_iv9yen.jpg',
   name: 'Agusti Frananda Alfonsus Naibaho',
   parentsName: 'Bapak T. Naibaho dan Ibu T. Gultom',
-  ig_link: 'string',
+  ig_link: 'https://www.instagram.com/agustifrananda?igsh=MXRhZ3I5M3dncmgxbg%3D%3D&utm_source=qr',
   ig_username: 'agustifrananda',
 };
 
@@ -12,7 +12,7 @@ export const bride2 = {
     'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214288/weeding_single_2_cjeduv.jpg',
   name: 'Betharia Crisdayanti Sitorus',
   parentsName: 'Bapak B. Sitorus dan Ibu J. Napitupulu',
-  ig_link: 'string',
+  ig_link: 'https://www.instagram.com/bethariacrisdayanti/profilecard/?igsh=MTZ4ODFyeWZiMHcxYg==',
   ig_username: 'bethariacrisdayanti',
 };
 

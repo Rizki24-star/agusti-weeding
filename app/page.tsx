@@ -1,6 +1,6 @@
 'use client';
 import Image from 'next/image';
-import { playfairDisplay, roboto, playUsTrad } from './font';
+import { playfairDisplay, roboto, cinzel } from './font';
 import TitleSection from '@/components/TitleSection';
 import BrideCard from '@/components/BrideCard';
 import { bride1, bride2, event1, event2, loveStories } from '@/constants/data';
@@ -12,14 +12,60 @@ import WishForm from '@/components/WishForm';
 import CountDownDate from '@/components/CountDownDate';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
 import Galeries from '@/components/ImageSlider';
+import { useState } from 'react';
+import { useSearchParams } from 'next/navigation';
+import AudioPlay from '@/components/AudioPlay';
 
 // TODO: add music
 // TODO: add opening cover
 // TODO: Fetch all image from cloudinary
 
 export default function Home() {
+  const [showOpeningCard, setShowOpeningCard] = useState(true)
+  const params = useSearchParams()
+  // console.log("ro" +  params.get('to'));
+  
+
   return (
     <>
+      {/* audio play  */}
+      <AudioPlay play={showOpeningCard == false} />
+      {/* opening card  */}
+      <div className={`absolute inset-0 bg-white h-screen w-screen z-50  ${showOpeningCard ? '' : '-top-[100%]'}`} style={{transition: '0.3s ease'}}>
+        <div className="max-w-[430px] w-full h-screen mx-auto bg-navy relative">
+          <Image
+            src="/assets/opening-card.png"
+            className="object-cover w-full h-screen z-50"
+            width={500}
+            height={500}
+            alt={''}
+          />
+          <div className="absolute flex flex-col text-center items-center justify-center top-[30%] mx-auto w-full">
+            <h1
+              className={`${cinzel.className}  text-gold font-bold text-[48px]`}
+            >
+              Agusti
+              <br />&<br />
+              Betharia
+            </h1>
+            <p className={`${cinzel.className}  text-gold text-[24px] mt-8`}>
+              February |<b>8</b>| 2025
+            </p>
+            <h4
+              className={`${cinzel.className}  text-gold text-[24px] mt-8 font-black`}
+            >
+              {params.get('to')}
+            </h4>
+            <br />
+            <button
+            onClick={() => setShowOpeningCard(!showOpeningCard)}
+              className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px] font-bold`}
+            >
+              Buka Undangan
+            </button>
+          </div>
+        </div>
+      </div>
       {/* Opening Section */}
       <section className="relative h-screen bg-[url('https://res.cloudinary.com/dzhce2fub/image/upload/v1736214290/img_opening_dm7frq.jpg')] bg-cover bg-center">
         <style jsx>{`
@@ -38,7 +84,7 @@ export default function Home() {
           <h1
             className={`text-center text-4xl pt-[160px] ${playfairDisplay.className} font-bold text-navy`}
           >
-            Agusti & Bertaria
+            Agusti & Betharia
           </h1>
           <div className="mx-[30px] text-white z-10 mb-[129px]">
             <p className={`${roboto.className} font-bold text-[30px]`}>
@@ -74,6 +120,7 @@ export default function Home() {
           />
         </div>
       </div>
+
       {/* love story section  */}
       <section className="relative bg-[url('../public/assets/sky.gif')]">
         <div className="absolute inset-0 bg-white opacity-85" />
@@ -94,7 +141,9 @@ export default function Home() {
           <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20">
             {loveStories.map((item, i) => (
               <div key={i.toString()} className="flex flex-col gap-y-6">
-                <h5 className={`${playUsTrad.className} text-gold text-[18px]`}>
+                <h5
+                  className={`${cinzel.className} text-gold text-[18px] font-bold`}
+                >
                   {item.time}
                 </h5>
                 <span className={`${roboto.className} text-gold`}>
@@ -209,7 +258,7 @@ export default function Home() {
             <h1
               className={`${playfairDisplay.className} text-white font-bold text-[32px]`}
             >
-              Terimaksih
+              Terimakasih
             </h1>
             <p
               className={`${playfairDisplay.className} text-white font-bold text-[16px] mt-6`}
