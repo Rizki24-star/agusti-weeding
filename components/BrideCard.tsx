@@ -1,4 +1,4 @@
-import { cinzel, playUsTrad, roboto } from '@/app/font';
+import { cinzel, roboto } from '@/app/font';
 import Image from 'next/image';
 import Link from 'next/link';
 import React from 'react';
