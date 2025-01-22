@@ -37,7 +37,7 @@ const BrideCard = ({
             {name}
           </h5>
           <p className={`${roboto.className} text-gold font-bold mt-[26px]`}>
-            Putra pertama dari :
+            { ig_username == "bethariacrisdayanti" ? "Putri kedua" : "Putra pertama"} dari :
           </p>
           <p className={`${roboto.className} text-gold`}>{parentsName}</p>
           <motion.button
