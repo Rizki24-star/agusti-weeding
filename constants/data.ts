@@ -24,7 +24,7 @@ export const event1 = {
   location: 'Gereja Katolik Paroki St. Fransiskus Assisi Padang Baru',
   address:
     'Jln. Jenderal Sudirman No. 50, Jati Baru, Padang Timur, Kota Padang, Sumatera Barat, Indonesia',
-  mapLink: 'link',
+  mapLink: 'https://maps.app.goo.gl/qb4sbtbXHf9gW6st9?g_st=com.google.maps.preview.copy',
 };
 
 export const event2 = {
@@ -34,7 +34,7 @@ export const event2 = {
   date: 'February 8, 2024<br/>11.00 WIB s/d Selesai',
   location: 'Gedung Serba Guna HKBP Padang',
   address: 'Jln. Gurun Dalam Padang, Sumatera Barat, Indonesia',
-  mapLink: 'link',
+  mapLink: 'https://maps.app.goo.gl/Y78jqPvSDLW5SSSp8?g_st=com.google.maps.preview.copy',
 };
 
 export const loveStories = [
