@@ -34,27 +34,18 @@ const WeedingGiftCard = () => {
           <p className="font-bold text-gold">1630602340</p>
           <p className="text-gold">Agusti Frananda A. Naibaho</p>
         </div>
-        <div className={`text-center mt-[47px]`}>
-          <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
-          <p className="font-bold text-gold">
-            Penerima:
-            <br /> Agusti Frananda A. Naibaho <br/>(0895359640687 - BCA)
-          </p>
-          {/* <p className="text-gold">
-            Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
-            Sumatera Barat, 25581
-          </p> */}
+        <div className={`text-center mt-[39px]`}>
+          <h1 className={`text-navy font-bold text-[24px]`}>Mandiri</h1>
+          <p className="font-bold text-gold">1050019878267</p>
+          <p className="text-gold">Betharia Crisdayanti Sitorus</p>
         </div>
         <div className={`text-center mt-[47px]`}>
           <h1 className={`text-navy font-bold text-[24px]`}>GIFT</h1>
-          <p className="font-bold text-gold">
+          <p className="text-gold">
             Penerima:
-            <br /> Betharia Crisdayanti Sitorus <br/>(1050019878267 - MANDIRI)
+            <br /> Agusti Frananda A. Naibaho <br/>
+            Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman, Sumatera Barat, 25581
           </p>
-          {/* <p className="text-gold">
-            Perumnas Kp. Ladang, Gang Anggrek, Lubuk Alung, Padang Pariaman,
-            Sumatera Barat, 25581
-          </p> */}
         </div>
         </div>
         <Image src={cardBow} alt="card-bow" className="w-full mt-[62px]" />

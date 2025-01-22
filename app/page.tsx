@@ -49,7 +49,7 @@ function OpeningCard({
   return (
     <div
       className={`absolute inset-0 bg-white h-screen w-screen z-50 ${
-        showOpeningCard ? '' : '-top-[100%]'
+        showOpeningCard ? '' : '-top-[12000px]'
       }`}
       style={{ transition: '0.3s ease' }}
     >
@@ -179,21 +179,6 @@ export default function Home() {
           <BrideCard {...bride1} />
           <TitleSection title="Bride" />
           <BrideCard {...bride2} />
-          <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-14">
-            <TitleSection title="Our Love Story" />
-            {loveStories.map((item, i) => (
-              <div key={i.toString()} className="flex flex-col gap-y-4">
-                <h5
-                  className={`${cinzel.className} text-gold text-[18px] font-bold`}
-                >
-                  {item.time}
-                </h5>
-                <span className={`${roboto.className} text-gold`}>
-                  {item.story}
-                </span>
-              </div>
-            ))}
-          </div>
         </div>
         <div className="h-10" />
         <div className="relative mx-auto z-10">
@@ -220,6 +205,21 @@ export default function Home() {
         </div>
       </section>
 
+      <div className="flex flex-col bg-lightBrown py-[54px] px-[30px] gap-8">
+            <TitleSection title="Our Love Story" />
+            {loveStories.map((item, i) => (
+              <div key={i.toString()} className="flex flex-col gap-y-4">
+                <h5
+                  className={`${cinzel.className} text-gold text-[18px] font-bold`}
+                >
+                  {item.time}
+                </h5>
+                <span className={`${roboto.className} text-gold`}>
+                  {item.story}
+                </span>
+              </div>
+            ))}
+          </div>
       {/* weeding event  */}
       <section className="mt-12">
         <TitleSection title="Weeding Event" />
@@ -303,7 +303,7 @@ export default function Home() {
               Terimakasih
             </h1>
             <p
-              className={`${playfairDisplay.className} text-white font-bold text-[16px] mt-6`}
+              className={`${playfairDisplay.className} text-white text-[16px] mt-6`}
             >
               Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
               Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan doa restu
@@ -316,7 +316,7 @@ export default function Home() {
               <h1
                 className={`${playfairDisplay.className} text-white font-bold text-[32px]`}
               >
-                Agusti & Bertaria
+                Agusti & Betharia
               </h1>
               <Image
                 src={'/assets/flower_title.png'}

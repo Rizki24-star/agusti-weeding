@@ -17,7 +17,7 @@ const AudioPlay = ({play}: {play: boolean}) => {
           if (audioRef.current) {
             try {
               // First try playing with user interaction
-              const playPromise = audioRef.current.play();
+              const playPromise = audioRef.current.pause();
               if (playPromise !== undefined) {
                 await playPromise;
                 setIsPlaying(true);
