@@ -220,6 +220,28 @@ export default function Home() {
               </div>
             ))}
           </div>
+          <div className="relative mx-auto z-10">
+          <div className="absolute flex items-center justify-between inset-0">
+            <Image
+              src="/assets/opening_flower.png"
+              alt="arrow-icon"
+              width={155}
+              height={63}
+            />
+            <Image
+              src="/assets/opening_flower.png"
+              alt="arrow-icon"
+              width={155}
+              height={63}
+            />
+            <Image
+              src="/assets/opening_flower.png"
+              alt="arrow-icon"
+              width={155}
+              height={63}
+            />
+          </div>
+        </div>
       {/* weeding event  */}
       <section className="mt-12">
         <TitleSection title="Weeding Event" />
