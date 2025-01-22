@@ -12,60 +12,95 @@ import WishForm from '@/components/WishForm';
 import CountDownDate from '@/components/CountDownDate';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
 import Galeries from '@/components/ImageSlider';
-import { useState } from 'react';
+import { Dispatch, SetStateAction, Suspense, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AudioPlay from '@/components/AudioPlay';
 
-// TODO: add music
-// TODO: add opening cover
-// TODO: Fetch all image from cloudinary
+interface FontType {
+  className: string;
+  // Add other font properties if needed
+  style?: { [key: string]: string | number };
+}
+
+interface OpeningCardProps {
+  showOpeningCard: boolean;
+  setShowOpeningCard: Dispatch<SetStateAction<boolean>>;
+  cinzel: FontType;
+  roboto: FontType;
+}
+
+// Guest name component with search params
+function GuestName() {
+  const params = useSearchParams();
+  return (
+    <h4 className={`${cinzel.className} text-gold text-[24px] mt-8 font-black`}>
+      {params.get('to')}
+    </h4>
+  );
+}
+
+// Opening card component
+function OpeningCard({ showOpeningCard, setShowOpeningCard, cinzel, roboto }: OpeningCardProps) {
+  return (
+    <div
+      className={`absolute inset-0 bg-white h-screen w-screen z-50 ${
+        showOpeningCard ? '' : '-top-[100%]'
+      }`}
+      style={{ transition: '0.3s ease' }}
+    >
+      <div className="max-w-[430px] w-full h-screen mx-auto bg-navy relative">
+        <Image
+          src="/assets/opening-card.png"
+          className="object-cover w-full h-screen z-50"
+          width={500}
+          height={500}
+          alt={''}
+        />
+        <div className="absolute flex flex-col text-center items-center justify-center top-[30%] mx-auto w-full">
+          <h1 className={`${cinzel.className} text-gold font-bold text-[48px]`}>
+            Agusti
+            <br />&<br />
+            Betharia
+          </h1>
+          <p className={`${cinzel.className} text-gold text-[24px] mt-8`}>
+            February |<b>8</b>| 2025
+          </p>
+
+          <Suspense fallback={<div>Loading...</div>}>
+            <GuestName />
+          </Suspense>
+
+          <br />
+          <button
+            onClick={() => setShowOpeningCard(!showOpeningCard)}
+            className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px] font-bold`}
+          >
+            Buka Undangan
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}
 
 export default function Home() {
-  const [showOpeningCard, setShowOpeningCard] = useState(true)
-  const params = useSearchParams()
-  // console.log("ro" +  params.get('to'));
-  
+  const [showOpeningCard, setShowOpeningCard] = useState(true);
 
   return (
     <>
       {/* audio play  */}
       <AudioPlay play={showOpeningCard == false} />
+
       {/* opening card  */}
-      <div className={`absolute inset-0 bg-white h-screen w-screen z-50  ${showOpeningCard ? '' : '-top-[100%]'}`} style={{transition: '0.3s ease'}}>
-        <div className="max-w-[430px] w-full h-screen mx-auto bg-navy relative">
-          <Image
-            src="/assets/opening-card.png"
-            className="object-cover w-full h-screen z-50"
-            width={500}
-            height={500}
-            alt={''}
-          />
-          <div className="absolute flex flex-col text-center items-center justify-center top-[30%] mx-auto w-full">
-            <h1
-              className={`${cinzel.className}  text-gold font-bold text-[48px]`}
-            >
-              Agusti
-              <br />&<br />
-              Betharia
-            </h1>
-            <p className={`${cinzel.className}  text-gold text-[24px] mt-8`}>
-              February |<b>8</b>| 2025
-            </p>
-            <h4
-              className={`${cinzel.className}  text-gold text-[24px] mt-8 font-black`}
-            >
-              {params.get('to')}
-            </h4>
-            <br />
-            <button
-            onClick={() => setShowOpeningCard(!showOpeningCard)}
-              className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px] font-bold`}
-            >
-              Buka Undangan
-            </button>
-          </div>
-        </div>
-      </div>
+      <Suspense fallback={<div>Loading...</div>}>
+        <OpeningCard
+          showOpeningCard={showOpeningCard}
+          setShowOpeningCard={setShowOpeningCard}
+          cinzel={cinzel}
+          roboto={roboto}
+        />
+      </Suspense>
+
       {/* Opening Section */}
       <section className="relative h-screen bg-[url('https://res.cloudinary.com/dzhce2fub/image/upload/v1736214290/img_opening_dm7frq.jpg')] bg-cover bg-center">
         <style jsx>{`
@@ -177,6 +212,7 @@ export default function Home() {
           </div>
         </div>
       </section>
+
       {/* weeding event  */}
       <section className="mt-12">
         <TitleSection title="Weeding Event" />
@@ -185,10 +221,10 @@ export default function Home() {
         <div className="h-[21px]" />
         <EventCard {...event2} />
       </section>
+
       {/* gift and hours  */}
       <section>
         <Image src={bgFlower} alt="flower" />
-        {/* Countdown timer functionality */}
         <CountDownDate />
         <div className="text-center mt-[34px] mx-[30px]">
           <i
@@ -206,28 +242,27 @@ export default function Home() {
             Matius 19:5-6
           </p>
         </div>
-        {/* weeding gift card  */}
         <WeedingGiftCard />
         <TitleSection title="Galery Photos" />
-        {/* galery slider  */}
         <Galeries />
       </section>
+
       {/* rsv & wishes  */}
-      {/* <Wishes> */}
       <section className="flex flex-col items-center justify-center mt-[69px]">
         <TitleSection title="RSV & Wishes" />
-        <div className="w-full  bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
+        <div className="w-full bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center min-w-[270px] w-full h-[528px] px-12 bg-[url('../public/assets/bg_rsv_form.png')] bg-contain bg-no-repeat bg-center">
             <h2
               className={`${playfairDisplay.className} text-gold font-bold text-[24px]`}
             >
               Are you attended?
             </h2>
-            {<WishForm />}
+            <WishForm />
           </div>
           <WishList />
         </div>
       </section>
+
       <div className="relative -top-8 bg-gold">
         <div className="absolute flex items-center justify-center z-20">
           <Image
@@ -264,7 +299,7 @@ export default function Home() {
               className={`${playfairDisplay.className} text-white font-bold text-[16px] mt-6`}
             >
               Merupakan suatu kebahagiaan dan kehormatan bagi kami, apabila
-              Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan do’a restu
+              Bapak/Ibu/Saudara/i, berkenan hadir dan memberikan doa restu
               kepada kami.
             </p>
             <div className="mt-10 flex flex-col items-center gap-4">
