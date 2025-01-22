@@ -20,7 +20,7 @@ const BrideCard = ({
   ig_username,
 }: BrideCardProps) => {
   return (
-    <div className=" w-full px-[30px] bg-cover py-[34px]">
+    <div className=" w-full px-[30px] bg-cover py-[28px]">
       <motion.div
         whileInView={{ opacity: 1 }}
         className=" flex flex-col justify-center items-center "

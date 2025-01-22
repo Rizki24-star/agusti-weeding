@@ -33,14 +33,19 @@ interface OpeningCardProps {
 function GuestName() {
   const params = useSearchParams();
   return (
-    <h4 className={`${cinzel.className} text-gold text-[24px] mt-8 font-black`}>
-      {params.get('to')}
+    <h4 className={`${roboto.className} text-gold text-[24px] mt-8`}>
+      Yth: {params.get('to')}
     </h4>
   );
 }
 
 // Opening card component
-function OpeningCard({ showOpeningCard, setShowOpeningCard, cinzel, roboto }: OpeningCardProps) {
+function OpeningCard({
+  showOpeningCard,
+  setShowOpeningCard,
+  cinzel,
+  roboto,
+}: OpeningCardProps) {
   return (
     <div
       className={`absolute inset-0 bg-white h-screen w-screen z-50 ${
@@ -163,7 +168,7 @@ export default function Home() {
           <div className="flex justify-between relative">
             <Image src={openingFlowerVertical} alt="vertical-flower" />
             <div className="pt-8">
-              <TitleSection title="Our Love Story" />
+              <TitleSection title="Groom" />
             </div>
             <Image
               src={openingFlowerVertical}
@@ -172,10 +177,12 @@ export default function Home() {
             />
           </div>
           <BrideCard {...bride1} />
+          <TitleSection title="Bride" />
           <BrideCard {...bride2} />
-          <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-20">
+          <div className="flex flex-col bg-lightBrown py-[48px] px-[30px] gap-14">
+            <TitleSection title="Our Love Story" />
             {loveStories.map((item, i) => (
-              <div key={i.toString()} className="flex flex-col gap-y-6">
+              <div key={i.toString()} className="flex flex-col gap-y-4">
                 <h5
                   className={`${cinzel.className} text-gold text-[18px] font-bold`}
                 >

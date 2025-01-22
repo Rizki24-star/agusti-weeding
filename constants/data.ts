@@ -84,11 +84,19 @@ export const galeries = [
     description: '',
   },
   {
-    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258423/galery_4_w14rni.jpg',
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214290/weeding_1_obnfsm.jpg',
     description: '',
   },
   {
-    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258424/galery_6_vtpvfi.jpg',
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214290/img_opening_dm7frq.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_open_rgfalt.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736258423/galery_4_w14rni.jpg',
     description: '',
   },
   {
@@ -97,6 +105,18 @@ export const galeries = [
   },
   {
     url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736260267/galery_6_kestti.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_2_l7vn2h.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214288/weeding_single_2_cjeduv.jpg',
+    description: '',
+  },
+  {
+    url: 'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214286/weeding_single_1_iv9yen.jpg',
     description: '',
   },
 ];
