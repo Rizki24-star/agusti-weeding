@@ -2,11 +2,11 @@
 import Image from 'next/image';
 import { playfairDisplay, roboto, cinzel } from './font';
 import TitleSection from '@/components/TitleSection';
-import BrideCard from '@/components/BrideCard';
-import { bride1, bride2, event1, event2, loveStories } from '@/constants/data';
+// import BrideCard from '@/components/BrideCard';
+import {  event1, event2, loveStories } from '@/constants/data';
 import bgFlower from '@/public/assets/bg_flower.png';
 import EventCard from '@/components/EventCard';
-import { openingFlowerVertical } from '@/public/assets';
+// import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
 // import CountDownDate from '@/components/CountDownDate';
@@ -88,52 +88,52 @@ function OpeningCard({
   );
 }
 
-function LoveStorySection() {
-  return (
-    <section className="relative bg-[url('../public/assets/sky.gif')]">
-      <div className="absolute inset-0 bg-white opacity-85" />
-      <div className="relative">
-        <div className="flex justify-between relative">
-          <Image src={openingFlowerVertical} alt="vertical-flower" />
-          <div className="pt-8">
-            <TitleSection title="Groom" />
-          </div>
-          <Image
-            src={openingFlowerVertical}
-            alt="vertical-flower"
-            className="transform scale-x-[-1]"
-          />
-        </div>
-        <BrideCard {...bride1} />
-        <TitleSection title="Bride" />
-        <BrideCard {...bride2} />
-      </div>
-      <div className="h-10" />
-      <div className="relative mx-auto z-10">
-        <div className="absolute flex items-center justify-between inset-0">
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-        </div>
-      </div>
-    </section>
-  );
-}
+// function LoveStorySection() {
+//   return (
+//     <section className="relative bg-[url('../public/assets/sky.gif')]">
+//       <div className="absolute inset-0 bg-white opacity-85" />
+//       <div className="relative">
+//         <div className="flex justify-between relative">
+//           <Image src={openingFlowerVertical} alt="vertical-flower" />
+//           <div className="pt-8">
+//             <TitleSection title="Groom" />
+//           </div>
+//           <Image
+//             src={openingFlowerVertical}
+//             alt="vertical-flower"
+//             className="transform scale-x-[-1]"
+//           />
+//         </div>
+//         <BrideCard {...bride1} />
+//         <TitleSection title="Bride" />
+//         <BrideCard {...bride2} />
+//       </div>
+//       <div className="h-10" />
+//       <div className="relative mx-auto z-10">
+//         <div className="absolute flex items-center justify-between inset-0">
+//           <Image
+//             src="/assets/opening_flower.png"
+//             alt="arrow-icon"
+//             width={155}
+//             height={63}
+//           />
+//           <Image
+//             src="/assets/opening_flower.png"
+//             alt="arrow-icon"
+//             width={155}
+//             height={63}
+//           />
+//           <Image
+//             src="/assets/opening_flower.png"
+//             alt="arrow-icon"
+//             width={155}
+//             height={63}
+//           />
+//         </div>
+//       </div>
+//     </section>
+//   );
+// }
 
 const MemoizedOpeningCard = React.memo(OpeningCard);
 const MemoizedGuestname = React.memo(GuestName);
@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* rsv & wishes  */}
-      <section className="flex flex-col items-center justify-center mt-[69px]">
+      {/* <section className="flex flex-col items-center justify-center mt-[69px]">
         <TitleSection title="RSV & Wishes" />
         <div className="w-full bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center min-w-[270px] w-full h-[528px] px-12 bg-[url('../public/assets/bg_rsv_form.png')] bg-contain bg-no-repeat bg-center">
@@ -304,7 +304,7 @@ export default function Home() {
           </div>
           <WishList />
         </div>
-      </section>
+      </section> */}
 
       <div className="relative -top-8 bg-gold">
         <div className="absolute flex items-center justify-center z-20">
