@@ -88,9 +88,60 @@ function OpeningCard({
   );
 }
 
+function LoveStorySection() {
+  return (
+    <section className="relative bg-[url('../public/assets/sky.gif')]">
+      <div className="absolute inset-0 bg-white opacity-85" />
+      <div className="relative">
+        <div className="flex justify-between relative">
+          <Image src={openingFlowerVertical} alt="vertical-flower" />
+          <div className="pt-8">
+            <TitleSection title="Groom" />
+          </div>
+          <Image
+            src={openingFlowerVertical}
+            alt="vertical-flower"
+            className="transform scale-x-[-1]"
+          />
+        </div>
+        <BrideCard {...bride1} />
+        <TitleSection title="Bride" />
+        <BrideCard {...bride2} />
+      </div>
+      <div className="h-10" />
+      <div className="relative mx-auto z-10">
+        <div className="absolute flex items-center justify-between inset-0">
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+        </div>
+      </div>
+    </section>
+  );
+}
+
 const MemoizedOpeningCard = React.memo(OpeningCard);
 const MemoizedGuestname = React.memo(GuestName);
-
+// const MemoizedLoveStory = React.memo(LoveStorySection);
+// const MemoizedGuestname = React.memo(GuestName);
+// const MemoizedGuestname = React.memo(GuestName);
+// const MemoizedGuestname = React.memo(GuestName);
+// const MemoizedGuestname = React.memo(GuestName);
 
 export default function Home() {
   const [showOpeningCard, setShowOpeningCard] = useState(true);
@@ -166,86 +217,45 @@ export default function Home() {
       </div>
 
       {/* love story section  */}
-      <section className="relative bg-[url('../public/assets/sky.gif')]">
-        <div className="absolute inset-0 bg-white opacity-85" />
-        <div className="relative">
-          <div className="flex justify-between relative">
-            <Image src={openingFlowerVertical} alt="vertical-flower" />
-            <div className="pt-8">
-              <TitleSection title="Groom" />
-            </div>
-            <Image
-              src={openingFlowerVertical}
-              alt="vertical-flower"
-              className="transform scale-x-[-1]"
-            />
-          </div>
-          <BrideCard {...bride1} />
-          <TitleSection title="Bride" />
-          <BrideCard {...bride2} />
-        </div>
-        <div className="h-10" />
-        <div className="relative mx-auto z-10">
-          <div className="absolute flex items-center justify-between inset-0">
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-          </div>
-        </div>
-      </section>
+      {/* <MemoizedLoveStory /> */}
 
       <div className="flex flex-col bg-lightBrown py-[54px] px-[30px] gap-8">
-            <TitleSection title="Our Love Story" />
-            {loveStories.map((item, i) => (
-              <div key={i.toString()} className="flex flex-col gap-y-4">
-                <h5
-                  className={`${cinzel.className} text-gold text-[18px] font-bold`}
-                >
-                  {item.time}
-                </h5>
-                <span className={`${roboto.className} text-gold`}>
-                  {item.story}
-                </span>
-              </div>
-            ))}
+        <TitleSection title="Our Love Story" />
+        {loveStories.map((item, i) => (
+          <div key={i} className="flex flex-col gap-y-4">
+            <h5
+              className={`${cinzel.className} text-gold text-[18px] font-bold`}
+            >
+              {item.time}
+            </h5>
+            <span className={`${roboto.className} text-gold`}>
+              {item.story}
+            </span>
           </div>
-          <div className="relative mx-auto z-10">
-          <div className="absolute flex items-center justify-between inset-0">
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-            <Image
-              src="/assets/opening_flower.png"
-              alt="arrow-icon"
-              width={155}
-              height={63}
-            />
-          </div>
+        ))}
+      </div>
+      <div className="relative mx-auto z-10">
+        <div className="absolute flex items-center justify-between inset-0">
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
+          <Image
+            src="/assets/opening_flower.png"
+            alt="arrow-icon"
+            width={155}
+            height={63}
+          />
         </div>
+      </div>
       {/* weeding event  */}
       <section className="mt-12">
         <TitleSection title="Weeding Event" />
