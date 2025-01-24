@@ -9,7 +9,7 @@ import EventCard from '@/components/EventCard';
 import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
-import CountDownDate from '@/components/CountDownDate';
+// import CountDownDate from '@/components/CountDownDate';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
 import Galeries from '@/components/ImageSlider';
 import { Dispatch, SetStateAction, Suspense, useState } from 'react';

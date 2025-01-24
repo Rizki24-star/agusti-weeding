@@ -20,7 +20,7 @@ export const event1 = {
   title: 'Pemberkatan',
   background:
     'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_open_rgfalt.jpg',
-  date: 'February 8, 2024<br/>09.00 WIB s/d Selesai',
+  date: 'February 8, 2025<br/>09.00 WIB s/d Selesai',
   location: 'Gereja Katolik Paroki St. Fransiskus Assisi Padang Baru',
   address:
     'Jln. Jenderal Sudirman No. 50, Jati Baru, Padang Timur, Kota Padang, Sumatera Barat, Indonesia',
@@ -31,7 +31,7 @@ export const event2 = {
   title: 'Adat Resepsi',
   background:
     'https://res.cloudinary.com/dzhce2fub/image/upload/v1736214289/weeding_2_l7vn2h.jpg',
-  date: 'February 8, 2024<br/>11.00 WIB s/d Selesai',
+  date: 'February 8, 2025<br/>11.00 WIB s/d Selesai',
   location: 'Gedung Serba Guna HKBP Padang',
   address: 'Jln. Gurun Dalam Padang, Sumatera Barat, Indonesia',
   mapLink: 'https://maps.app.goo.gl/Y78jqPvSDLW5SSSp8?g_st=com.google.maps.preview.copy',
