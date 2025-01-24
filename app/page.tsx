@@ -254,7 +254,7 @@ export default function Home() {
       {/* gift and hours  */}
       <section>
         <Image src={bgFlower} alt="flower" />
-        <CountDownDate />
+        {/* <CountDownDate /> */}
         <div className="text-center mt-[34px] mx-[30px]">
           <i
             className={`${playfairDisplay.className} text-[14px] text-gold italic`}
