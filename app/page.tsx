@@ -291,7 +291,7 @@ export default function Home() {
       </section>
 
       {/* rsv & wishes  */}
-      {/* <section className="flex flex-col items-center justify-center mt-[69px]">
+      <section className="flex flex-col items-center justify-center mt-[69px]">
         <TitleSection title="RSV & Wishes" />
         <div className="w-full bg-[url('../public/assets/bg_rsv.png')] px-[10px] mx-auto py-[70px] mt-[34px]">
           <div className="flex flex-col items-center justify-center min-w-[270px] w-full h-[528px] px-12 bg-[url('../public/assets/bg_rsv_form.png')] bg-contain bg-no-repeat bg-center">
@@ -304,7 +304,7 @@ export default function Home() {
           </div>
           <WishList />
         </div>
-      </section> */}
+      </section>
 
       <div className="relative -top-8 bg-gold">
         <div className="absolute flex items-center justify-center z-20">

@@ -8,15 +8,14 @@ const ReplyList = ({ parentId }: { parentId: string }) => {
   const { getWish, wishes } = useStore();
   const [replies, setReplies] = useState<Reply[]>([]);
 
-  const getReplies = useCallback(async () => {
-    const wish = await getWish(parentId);
-    setReplies(wish?.replies ?? []);
-  }, [getWish, parentId, wishes]);
-
   useEffect(() => {
-    getReplies();
-    console.log("test");
-  }, [getReplies, getWish, replies]);
+    const fetchReplies = async () => {
+      const wish = await getWish(parentId);
+      setReplies(wish?.replies ?? [])
+    }
+
+    fetchReplies();
+  }, [getWish, parentId]);
 
   return (
     <div className="ms-3 flex flex-col py-1 max-h-[300px]  overflow-y-auto">

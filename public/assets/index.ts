@@ -26,7 +26,6 @@ export {
   flowerTitle,
   icInstragram,
   iArrow,
-  imgOpening,
   openingFlower,
   openingFlowerVertical,
   reply,
