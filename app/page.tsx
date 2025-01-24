@@ -12,7 +12,7 @@ import WishForm from '@/components/WishForm';
 // import CountDownDate from '@/components/CountDownDate';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
 import Galeries from '@/components/ImageSlider';
-import { Dispatch, SetStateAction, Suspense, useState } from 'react';
+import React, { Dispatch, SetStateAction, Suspense, useState } from 'react';
 import { useSearchParams } from 'next/navigation';
 import AudioPlay from '@/components/AudioPlay';
 
@@ -72,7 +72,7 @@ function OpeningCard({
           </p>
 
           <Suspense fallback={<div>Loading...</div>}>
-            <GuestName />
+            <MemoizedGuestname />
           </Suspense>
 
           <br />
@@ -88,6 +88,10 @@ function OpeningCard({
   );
 }
 
+const MemoizedOpeningCard = React.memo(OpeningCard);
+const MemoizedGuestname = React.memo(GuestName);
+
+
 export default function Home() {
   const [showOpeningCard, setShowOpeningCard] = useState(true);
 
@@ -98,7 +102,7 @@ export default function Home() {
 
       {/* opening card  */}
       <Suspense fallback={<div>Loading...</div>}>
-        <OpeningCard
+        <MemoizedOpeningCard
           showOpeningCard={showOpeningCard}
           setShowOpeningCard={setShowOpeningCard}
           cinzel={cinzel}
