@@ -2,146 +2,17 @@
 import Image from 'next/image';
 import { playfairDisplay, roboto, cinzel } from './font';
 import TitleSection from '@/components/TitleSection';
-// import BrideCard from '@/components/BrideCard';
-import {  event1, event2, loveStories } from '@/constants/data';
+import { event1, event2, loveStories } from '@/constants/data';
 import bgFlower from '@/public/assets/bg_flower.png';
 import EventCard from '@/components/EventCard';
-// import { openingFlowerVertical } from '@/public/assets';
 import WishList from '@/components/WishList';
 import WishForm from '@/components/WishForm';
-// import CountDownDate from '@/components/CountDownDate';
 import WeedingGiftCard from '@/components/WeedingGiftCard';
 import Galeries from '@/components/ImageSlider';
-import React, { Dispatch, SetStateAction, Suspense, useState } from 'react';
-import { useSearchParams } from 'next/navigation';
+import React, { Suspense, useState } from 'react';
 import AudioPlay from '@/components/AudioPlay';
-
-interface FontType {
-  className: string;
-  // Add other font properties if needed
-  style?: { [key: string]: string | number };
-}
-
-interface OpeningCardProps {
-  showOpeningCard: boolean;
-  setShowOpeningCard: Dispatch<SetStateAction<boolean>>;
-  cinzel: FontType;
-  roboto: FontType;
-}
-
-// Guest name component with search params
-function GuestName() {
-  const params = useSearchParams();
-  return (
-    <h4 className={`${roboto.className} text-gold text-[24px] mt-8`}>
-      Yth: {params.get('to')}
-    </h4>
-  );
-}
-
-// Opening card component
-function OpeningCard({
-  showOpeningCard,
-  setShowOpeningCard,
-  cinzel,
-  roboto,
-}: OpeningCardProps) {
-  return (
-    <div
-      className={`absolute inset-0 bg-white h-screen w-screen z-50 ${
-        showOpeningCard ? '' : '-top-[12000px]'
-      }`}
-      style={{ transition: '0.3s ease' }}
-    >
-      <div className="max-w-[430px] w-full h-screen mx-auto bg-navy relative">
-        <Image
-          src="/assets/opening-card.png"
-          className="object-cover w-full h-screen z-50"
-          width={500}
-          height={500}
-          alt={''}
-        />
-        <div className="absolute flex flex-col text-center items-center justify-center top-[30%] mx-auto w-full">
-          <h1 className={`${cinzel.className} text-gold font-bold text-[48px]`}>
-            Agusti
-            <br />&<br />
-            Betharia
-          </h1>
-          <p className={`${cinzel.className} text-gold text-[24px] mt-8`}>
-            February |<b>8</b>| 2025
-          </p>
-
-          <Suspense fallback={<div>Loading...</div>}>
-            <MemoizedGuestname />
-          </Suspense>
-
-          <br />
-          <button
-            onClick={() => setShowOpeningCard(!showOpeningCard)}
-            className={`${roboto.className} mt-[18px] p-[10px] text-white bg-gold w-full max-w-[234px] rounded-[10px] font-bold`}
-          >
-            Buka Undangan
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-// function LoveStorySection() {
-//   return (
-//     <section className="relative bg-[url('../public/assets/sky.gif')]">
-//       <div className="absolute inset-0 bg-white opacity-85" />
-//       <div className="relative">
-//         <div className="flex justify-between relative">
-//           <Image src={openingFlowerVertical} alt="vertical-flower" />
-//           <div className="pt-8">
-//             <TitleSection title="Groom" />
-//           </div>
-//           <Image
-//             src={openingFlowerVertical}
-//             alt="vertical-flower"
-//             className="transform scale-x-[-1]"
-//           />
-//         </div>
-//         <BrideCard {...bride1} />
-//         <TitleSection title="Bride" />
-//         <BrideCard {...bride2} />
-//       </div>
-//       <div className="h-10" />
-//       <div className="relative mx-auto z-10">
-//         <div className="absolute flex items-center justify-between inset-0">
-//           <Image
-//             src="/assets/opening_flower.png"
-//             alt="arrow-icon"
-//             width={155}
-//             height={63}
-//           />
-//           <Image
-//             src="/assets/opening_flower.png"
-//             alt="arrow-icon"
-//             width={155}
-//             height={63}
-//           />
-//           <Image
-//             src="/assets/opening_flower.png"
-//             alt="arrow-icon"
-//             width={155}
-//             height={63}
-//           />
-//         </div>
-//       </div>
-//     </section>
-//   );
-// }
-
-const MemoizedOpeningCard = React.memo(OpeningCard);
-const MemoizedGuestname = React.memo(GuestName);
-// const MemoizedLoveStory = React.memo(LoveStorySection);
-// const MemoizedGuestname = React.memo(GuestName);
-// const MemoizedGuestname = React.memo(GuestName);
-// const MemoizedGuestname = React.memo(GuestName);
-// const MemoizedGuestname = React.memo(GuestName);
+import { DynamicWishList, MemoizedLoveStory, MemoizedOpeningCard } from '@/components';
+import FloweSections from '@/components/FloweSections';
 
 export default function Home() {
   const [showOpeningCard, setShowOpeningCard] = useState(true);
@@ -217,7 +88,7 @@ export default function Home() {
       </div>
 
       {/* love story section  */}
-      {/* <MemoizedLoveStory /> */}
+      <MemoizedLoveStory />
 
       <div className="flex flex-col bg-lightBrown py-[54px] px-[30px] gap-8">
         <TitleSection title="Our Love Story" />
@@ -235,26 +106,7 @@ export default function Home() {
         ))}
       </div>
       <div className="relative mx-auto z-10">
-        <div className="absolute flex items-center justify-between inset-0">
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-        </div>
+        <FloweSections />
       </div>
       {/* weeding event  */}
       <section className="mt-12">
@@ -300,33 +152,16 @@ export default function Home() {
             >
               Are you attended?
             </h2>
+            {/* wish form  */}
             <WishForm />
           </div>
-          <WishList />
+          {/* wish list  */}
+          <DynamicWishList />
         </div>
       </section>
 
       <div className="relative -top-8 bg-gold">
-        <div className="absolute flex items-center justify-center z-20">
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-          <Image
-            src="/assets/opening_flower.png"
-            alt="arrow-icon"
-            width={155}
-            height={63}
-          />
-        </div>
+        <FloweSections />
       </div>
 
       {/* footer  */}
