@@ -84,7 +84,7 @@ const Galeries = () => {
                   alt={`image-gallery-${i}`}
                   className={`rounded-[10px] m-auto w-full h-full ${
                     selectedImage == i + 1 ? '' : 'hidden'
-                  } object-cover`}
+                  } object-contain`}
                   width={250}
                   height={150}
                 />
